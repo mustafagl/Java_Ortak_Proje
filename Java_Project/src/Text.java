@@ -8,17 +8,18 @@ public class Text extends JFrame {
     int total =0;
     public Text(){
         JFrame frame= new JFrame();
+        frame.setResizable(false);
         JTextField text = new JTextField(10);
         frame.getContentPane().setLayout(new FlowLayout());
 
         JLabel label1= new JLabel();
         label1.setForeground(Color.cyan);
 
-        label1.setText("Sipariþ: ");
+        label1.setText("SipariÅŸ: ");
         frame.getContentPane().add(label1);
         frame.getContentPane().setBackground(Color.black);
 
-        JButton button =new JButton("Gönder");
+        JButton button =new JButton("GÃ¶nder");
 
         frame.getContentPane().add(text);
         frame.getContentPane().add(button);
@@ -26,7 +27,7 @@ public class Text extends JFrame {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                label1.setText(text.getText() +" dýþýnda baþka bir þey ister misiniz?");
+                label1.setText(text.getText() +" dÄ±ÅŸÄ±nda baÅŸka bir ÅŸey ister misiniz?");
                 String text1 = text.getText().toLowerCase(Locale.ROOT);
                 switch (text1){
                     case "hamburger":
@@ -44,21 +45,21 @@ public class Text extends JFrame {
                     case "ayran":
                         total+=6;
                         break;
-                    case "hayýr":
+                    case "hayÄ±r":
                         label1.setText("Toplam tutar: "+(total));
                         break;
-                    case "çýk":
+                    case "Ã§Ä±k":
                         System.exit(0);
                     default:
-                        label1.setText("Bu ürün bulunmuyor");
+                        label1.setText("Bu Ã¼rÃ¼n bulunmuyor baÅŸka bir ÅŸey ister misiniz?");
                 }
 
             }
         });
 
         frame.setSize(544,110);
-        frame.setLocation(0,0);
-        frame.setResizable(false);
+        frame.setLocation(660,830);
+        
         frame.setVisible(true);
 
 

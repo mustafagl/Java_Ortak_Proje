@@ -7,12 +7,12 @@ public class MyFrame extends JFrame {
         this.add(label);
         this.setTitle("Restoran Oyunu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1264,841); // Ekranýn boyutu
-        this.setLocation(300,100);//Ekranýn ortsýnda gözükmesi için
+        this.setSize(1264,841); // EkranÄ±n boyutu
+        this.setLocation(300,100);//EkranÄ±n ortsÄ±nda gÃ¶zÃ¼kmesi iÃ§in
         this.setVisible(true);
 
-        ImageIcon background = new ImageIcon("src/abackground_new.jpg"); //Arka plan fotoðrafý
-        ImageIcon icon =new ImageIcon("src/dark.PNG"); //Ýkon
+        ImageIcon background = new ImageIcon("src/abackground_new.jpg"); //Arka plan fotoÄŸrafÄ±
+        ImageIcon icon =new ImageIcon("src/dark.PNG"); //ikon
         this.setIconImage(icon.getImage());
         label.setIcon(background);
 
