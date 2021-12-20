@@ -8,7 +8,7 @@ public class MyFrame extends JFrame {
         this.setTitle("Restoran Oyunu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1264,841); // Ekranın boyutu
-        this.setLocation(300,100);//Ekranın ortsında gözükmesi için
+        this.setLocationRelativeTo(null);//Ekranın ortsında gözükmesi için
         this.setVisible(true);
 
         ImageIcon background = new ImageIcon("src/abackground_new.jpg"); //Arka plan fotoğrafı
