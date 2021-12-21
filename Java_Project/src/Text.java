@@ -5,15 +5,16 @@ import java.awt.event.ActionListener;
 import java.util.Locale;
 
 public class Text extends JFrame {
-    int total =0;
+    
     public Text(){
         JFrame frame= new JFrame();
         frame.setTitle("Restoran Oyunu");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setSize(1264,841); // Ekranın boyutu
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        frame.setSize(1264,720); 			// Ekranın boyutu
+        frame.setLocationRelativeTo(null); 	
+        frame.setVisible(true); 			//Görünürlük
+        //frame.setResizable(false);											//Yeniden Boyutlandırma
 
         JTextField text = new JTextField(10);
 
@@ -40,6 +41,7 @@ public class Text extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 label1.setText(text.getText() +" dışında başka bir şey ister misiniz?");
                 String text1 = text.getText().toLowerCase(Locale.ROOT);
+                int total =0;
                 switch (text1){
                     case "hamburger":
                         total+=40;

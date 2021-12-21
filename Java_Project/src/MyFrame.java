@@ -7,7 +7,7 @@ public class MyFrame extends JFrame {
         this.add(label);
         this.setTitle("Restoran Oyunu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1264,841); // Ekranın boyutu
+        this.setSize(1264,720); // Ekranın boyutu
         this.setLocationRelativeTo(null);//Ekranın ortsında gözükmesi için
         this.setVisible(true);
 
