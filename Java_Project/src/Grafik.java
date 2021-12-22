@@ -64,9 +64,9 @@ public class Grafik extends JPanel {
 		create_yanpanel();
 		try {
 			img0 = ImageIO.read(new File("src/background.jpeg"));
-			img1 = ImageIO.read(new File("src/background.jpeg"));
-			img2 = ImageIO.read(new File("src/table.png"));
-			img3 = ImageIO.read(new File("src/man_back_1.png"));
+			img1 = ImageIO.read(new File("src/table.png"));
+			img2 = ImageIO.read(new File("src/man_back_1.png"));
+			img3 = ImageIO.read(new File("src/kasarli.jpg"));
 
 		} catch (IOException e) {
 			System.out.print("x");
@@ -94,10 +94,10 @@ public class Grafik extends JPanel {
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 
-		g.drawImage(img1, posx + 100, posy, 200, 100, null);
+		g.drawImage(img3, posx + 100, posy, 200, 100, null);
 		g.setColor(Color.black);
-		String s = "Yemek";
-		g.drawString(s, posx + 110, posy + 20);
+		//String s = "Yemek";
+		//g.drawString(s, posx + 110, posy + 20);
 
 		//
 		g.setColor(Color.black);
@@ -108,10 +108,10 @@ public class Grafik extends JPanel {
 		g.drawString(x, 500, 45);
 		Color c = new Color(171, 111, 21);
 		g.setColor(c);
-		g.fillRect(0, 400, 1200, 200);
+		//g.fillRect(0, 400, 1200, 200);
 
-		g.drawImage(img2, 200, 400, 882, 200, null);
-		g.drawImage(img3, 550, 300, 200, 300, null);
+		g.drawImage(img1, 200, 400, 882, 200, null);
+		g.drawImage(img2, 550, 300, 200, 300, null);
 		
 
 		if (posx == 650 && oyunudurdur == false) {
