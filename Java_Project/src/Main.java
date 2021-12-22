@@ -16,9 +16,10 @@ public class Main {
 		Color mycolor = new Color(111, 90, 85);
 		bs.setBackground(mycolor);
 		JFrame jf = new JFrame("Restoran Oyunu");
-		jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
-		jf.setSize(1200, 600);
-		jf.setVisible(true);
+		jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);					//Pencereyi kapatmak programýn sonlandýrmasýný saðlar.
+		jf.setSize(1200, 638);
+		jf.setVisible(true);											//Görünürlük
+		jf.setResizable(false);											//Yeniden Boyutlandýrma
 		jf.add(bs);
 
 		while (1 == 1) {
