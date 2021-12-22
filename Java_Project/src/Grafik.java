@@ -64,7 +64,7 @@ public class Grafik extends JPanel {
 		try {
 			img0 = ImageIO.read(new File("src/background.jpeg"));
 			img1 = ImageIO.read(new File("src/background.jpeg"));
-			img2 = ImageIO.read(new File("src/man_back.jpg"));
+			img2 = ImageIO.read(new File("src/man_back_1.png"));
 
 		} catch (IOException e) {
 			System.out.print("x");
