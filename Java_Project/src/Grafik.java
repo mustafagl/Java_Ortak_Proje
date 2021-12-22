@@ -32,6 +32,7 @@ public class Grafik extends JPanel {
 	BufferedImage img0 = null;
 	BufferedImage img1 = null;
 	BufferedImage img2 = null;
+	BufferedImage img3 = null;
 	boolean new_customer = true, oyunudurdur = false;;
 	JFrame jf = null;
 
@@ -64,7 +65,8 @@ public class Grafik extends JPanel {
 		try {
 			img0 = ImageIO.read(new File("src/background.jpeg"));
 			img1 = ImageIO.read(new File("src/background.jpeg"));
-			img2 = ImageIO.read(new File("src/man_back_1.png"));
+			img2 = ImageIO.read(new File("src/table.png"));
+			img3 = ImageIO.read(new File("src/man_back_1.png"));
 
 		} catch (IOException e) {
 			System.out.print("x");
@@ -108,7 +110,9 @@ public class Grafik extends JPanel {
 		g.setColor(c);
 		g.fillRect(0, 400, 1200, 200);
 
-		g.drawImage(img2, 600, 300, 200, 300, null);
+		g.drawImage(img2, 200, 400, 882, 200, null);
+		g.drawImage(img3, 550, 300, 200, 300, null);
+		
 
 		if (posx == 650 && oyunudurdur == false) {
 			oyunudurdur = true;
@@ -252,6 +256,7 @@ public class Grafik extends JPanel {
 		JButton button2 = new JButton();
 		JButton button3 = new JButton();
 		JButton button4 = new JButton();
+		JButton button5 = new JButton();
 		
 		button.setText("Çalýþanlar");
 		button.setBounds(10, 130, 80, 30);
@@ -321,6 +326,20 @@ public class Grafik extends JPanel {
 
 			}
 		});
+		
+		button5.setText("Reset");
+		button5.setBounds(10,410,80,30);
+		
+		/*
+		button5.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			
+				
+			}
+		}};
+	 
+	 	*/
 
 		yanpanel.add(l1);
 		yanpanel.add(l2);
@@ -335,6 +354,7 @@ public class Grafik extends JPanel {
 		yanpanel.add(button2);
 		yanpanel.add(button3);
 		yanpanel.add(button4);
+		yanpanel.add(button5);
 
 		this.add(yanpanel);
 
