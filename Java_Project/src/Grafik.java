@@ -230,20 +230,20 @@ public class Grafik extends JPanel {
 		yanpanel.setBackground(Color.white);
 
 		JLabel l1, l2, l3, l4, l5, l6, l7;
-		l1 = new JLabel("Para: " + Restaurant.para);
+		l1 = new JLabel("  Para: " + Restaurant.para);
 		l1.setBounds(10, 10, 80, 30);
-		l2 = new JLabel("Saat: " + Restaurant.saat);
+		l2 = new JLabel("  Saat: " + Restaurant.saat);
 		l2.setBounds(10, 50, 80, 30);
-		l3 = new JLabel("Yýldýz: " + Restaurant.yildiz);
+		l3 = new JLabel("  Yýldýz: " + Restaurant.yildiz);
 		l3.setBounds(10, 90, 80, 30);
 		
-		l4 = new JLabel("Hamur: " + Restaurant.hamur[0]);
+		l4 = new JLabel("  Hamur: " + Restaurant.hamur[0]);
 		l4.setBounds(10, 130, 80, 30);
 		
-		l5 = new JLabel("Kaþar: " + Restaurant.kasar[0]);
+		l5 = new JLabel("  Kaþar: " + Restaurant.kasar[0]);
 		l5.setBounds(10, 170, 80, 30);		
 
-		l6 = new JLabel("Sucuk: " + Restaurant.sucuk[0]);
+		l6 = new JLabel("  Sucuk: " + Restaurant.sucuk[0]);
 		l6.setBounds(210, 90, 80, 30);
 		
 		JButton button = new JButton();
@@ -259,10 +259,10 @@ public class Grafik extends JPanel {
 		button0.setText("Ýþ ilanlarý");
 		button0.setBounds(10, 250, 80, 30);
 
-		button2.setText("Yemekler");
-		button2.setBounds(10, 290, 80, 30);
+		button1.setText("Yemekler");
+		button1.setBounds(10, 290, 80, 30);
 
-		button2.addActionListener((ActionListener) new ActionListener() {
+		button1.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				create_yemekler_panel();
@@ -270,14 +270,22 @@ public class Grafik extends JPanel {
 			}
 		});		
 		
-		button3.setText("Malzemeler");
-		button3.setBounds(10, 330, 80, 30);
+		button2.setText("Malzemeler");
+		button2.setBounds(10, 330, 80, 30);
+		
+		button2.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
 
+				create_malzemeler_panel();
+
+			}
+		});
+
+		button3.setText("Saat Atla");
+		button3.setBounds(10, 330, 80, 30);
 		
-		button4.setText("Saat Atla");
-		button4.setBounds(10, 330, 80, 30);
-		
-		button4.addActionListener((ActionListener) new ActionListener() {
+		button3.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
@@ -299,10 +307,10 @@ public class Grafik extends JPanel {
 			}
 		});
 
-		button1.setText("Pause");
-		button1.setBounds(10, 370, 80, 30);
+		button4.setText("Pause");
+		button4.setBounds(10, 370, 80, 30);
 
-		button1.addActionListener((ActionListener) new ActionListener() {
+		button4.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
@@ -310,15 +318,6 @@ public class Grafik extends JPanel {
 					oyunudurdur = true;
 				else
 					oyunudurdur = false;
-
-			}
-		});
-
-		button3.addActionListener((ActionListener) new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				create_malzemeler_panel();
 
 			}
 		});
@@ -332,10 +331,10 @@ public class Grafik extends JPanel {
 		
 		yanpanel.add(button);
 		yanpanel.add(button0);
+		yanpanel.add(button1);
 		yanpanel.add(button2);
 		yanpanel.add(button3);
 		yanpanel.add(button4);
-		yanpanel.add(button1);
 
 		this.add(yanpanel);
 
