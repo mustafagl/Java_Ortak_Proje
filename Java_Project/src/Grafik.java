@@ -40,7 +40,8 @@ public class Grafik extends JPanel {
 		super.paintComponent(g);
 
 		g.drawImage(img0, 0, 0, 1200, 600, null);
-		// System.out.println(Customer.customer_per_hour);
+		//background.jpeg 1080x764
+		System.out.println(Customer.customer_per_hour);
 		if (Customer.customer_per_hour >= 0 && new_customer == true) {
 			Customer.customer_per_hour -= 1;
 		}
