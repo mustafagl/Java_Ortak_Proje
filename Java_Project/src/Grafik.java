@@ -40,6 +40,7 @@ public class Grafik extends JPanel {
 		super.paintComponent(g);
 
 		g.drawImage(img0, 0, 0, 1200, 600, null);
+		//g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		//background.jpeg 1080x764
 		System.out.println(Customer.customer_per_hour);
 		if (Customer.customer_per_hour >= 0 && new_customer == true) {
@@ -95,12 +96,7 @@ public class Grafik extends JPanel {
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 
-		g.drawImage(img3, posx + 100, posy, 200, 100, null);
-		g.setColor(Color.black);
-		//String s = "Yemek";
-		//g.drawString(s, posx + 110, posy + 20);
-
-		//
+		
 		g.setColor(Color.black);
 		g.fillArc(400, 10, 400, 50, 0, 360);
 		String x = "Restoran Oyunu";
@@ -113,6 +109,11 @@ public class Grafik extends JPanel {
 
 		g.drawImage(img1, 200, 400, 882, 200, null);
 		g.drawImage(img2, 550, 300, 200, 300, null);
+		
+		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
+		g.setColor(Color.black);
+		//String s = "Yemek";
+		//g.drawString(s, posx + 110, posy + 20);
 		
 
 		if (posx == 650 && oyunudurdur == false) {
