@@ -65,7 +65,7 @@ public class Grafik extends JPanel {
 		this.setLayout(null);
 		create_yanpanel();
 		try {
-			img0 = ImageIO.read(new File("src/background.jpeg"));
+			img0 = ImageIO.read(new File("src/background.jpg"));	//src/background.jpeg  Original
 			img1 = ImageIO.read(new File("src/table.png"));
 			img2 = ImageIO.read(new File("src/man_back_1.png"));
 			img3 = ImageIO.read(new File("src/kasarli_tost.png"));
@@ -96,7 +96,7 @@ public class Grafik extends JPanel {
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 
-		
+		/*
 		g.setColor(Color.black);
 		g.fillArc(400, 10, 400, 50, 0, 360);
 		String x = "Restoran Oyunu";
@@ -105,8 +105,9 @@ public class Grafik extends JPanel {
 		g.drawString(x, 500, 45);
 		Color c = new Color(171, 111, 21);
 		g.setColor(c);
-		//g.fillRect(0, 400, 1200, 200);
-
+		g.fillRect(0, 400, 1200, 200);
+		*/
+		
 		g.drawImage(img1, 200, 400, 882, 200, null);
 		g.drawImage(img2, 550, 300, 200, 300, null);
 		
