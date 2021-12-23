@@ -7,6 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
+		Customer.musterigelmeorani();
 
 		Restaurant.init_malzemeler();
 		Restaurant.init_yemekler();
@@ -24,7 +25,7 @@ public class Main {
 
 		while (1 == 1) {
 			long second = System.currentTimeMillis() - start;
-			System.out.println(second / 1000);
+			//System.out.println(second / 1000);
 			if (second / 1000 > 100) {
 				if (Restaurant.saat < 24) {
 
