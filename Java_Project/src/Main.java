@@ -23,20 +23,25 @@ public class Main {
 		jf.setResizable(false);											//Yeniden Boyutlandırma
 		jf.add(bs);
 
-		while (1 == 1) {
+		while (true) {
 			long second = System.currentTimeMillis() - start;
-			//System.out.println(second / 1000);
+			System.out.println(second / 1000);
 			if (second / 1000 > 100) {
 				if (Restaurant.saat < 24) {
 
 					Restaurant.saat += 1;
-					// start = System.currentTimeMillis();
+					 start = System.currentTimeMillis();
 
 				} else {
 					Restaurant.saat = 1;
 				}
 
 				Customer.musterigelmeorani();
+
+				bs.delete_menu(bs.yanpanel);
+				
+				bs.screate();
+				
 				// System.out.println(Customer.customer_per_hour);
 
 			}

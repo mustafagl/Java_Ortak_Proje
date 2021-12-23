@@ -24,7 +24,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Grafik extends JPanel {
-
+	
+	int count1=0;
+	
 	JPanel yanpanel = null;
 	JPanel panel_yemekler = null;
 	JPanel panel_malzemeler = null;
@@ -119,7 +121,7 @@ public class Grafik extends JPanel {
 
 		if (posx == 650 && oyunudurdur == false) {
 			oyunudurdur = true;
-
+			if(siparisPanelVisibility==false)
 			create_siparis_panel();
 
 		}
@@ -144,6 +146,8 @@ public class Grafik extends JPanel {
 		delete_menu(panel_yemekler);
 		delete_menu(panel_malzemeler);
 		siparisPanelVisibility=true;
+		siparis_panel= new JPanel();
+
 		siparis_panel.setLayout(new GridLayout(10, 0));
 
 		siparis_panel.setLocation(450, 100);
@@ -174,8 +178,11 @@ public class Grafik extends JPanel {
 		button.setText("Tamamla");
 		int c = r.nextInt(Restaurant.yemekler.size());
 		int count = 0;
+
+		
 		for (Entry<String, String[]> me : Restaurant.yemekler.entrySet()) {
 			if (c == count) {
+
 				System.out.println(me.getKey());
 				for (String i : me.getValue()) {
 					JLabel l1dn;
@@ -193,15 +200,13 @@ public class Grafik extends JPanel {
 					button.addActionListener((ActionListener) new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							Restaurant.para += slider.getValue() / 2;
+							siparisPanelVisibility=false;						
+							
 							Restaurant.malzemeler.get(i)[0] -= sliderdn.getValue();
-							delete_menu(yanpanel);
-							create_yanpanel();
-							delete_menu(siparis_panel);
 							oyunudurdur = false;
 							posx += 1;
-							siparisPanelVisibility=false;
 
+						
 						}
 					});
 
@@ -213,11 +218,23 @@ public class Grafik extends JPanel {
 
 		}
 
+
+		button.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Restaurant.para += slider.getValue() ;
+				delete_menu(yanpanel);
+				create_yanpanel();
+
+				delete_menu(siparis_panel);
+				
+			}
+		});
+		
+		
 		siparis_panel.add(button);
 
 		this.add(siparis_panel);
-		this.repaint();
-		this.revalidate();
 	}
 
 	void delete_menu(JPanel p) {
@@ -395,7 +412,7 @@ public class Grafik extends JPanel {
 	}
 
 	void create_malzemeler_panel() {
-
+		panel_malzemeler= new JPanel();
 		panel_malzemeler.setLayout(null);
 
 		panel_malzemeler.setLocation(450, 100);
@@ -452,6 +469,10 @@ public class Grafik extends JPanel {
 					delete_menu(yanpanel);
 					create_yanpanel();
 					System.out.println(list.getSelectedValue());
+					delete_menu(panel_malzemeler);
+					create_malzemeler_panel();
+
+				
 				}
 			}
 		});
@@ -477,8 +498,13 @@ public class Grafik extends JPanel {
 		this.repaint();
 		this.revalidate();
 	}
+	
+	void screate() {
+		create_yanpanel();
+	}
 
 	void create_yemekler_panel() {
+		panel_yemekler= new JPanel();
 
 		panel_yemekler.setLayout(null);
 
