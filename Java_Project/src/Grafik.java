@@ -230,28 +230,37 @@ public class Grafik extends JPanel {
 		yanpanel.setSize(150, 600);
 		
 		
-		yanpanel.setLayout(new GridLayout(15, 0));
+		yanpanel.setLayout(new GridLayout(15, 0,0,5));
 
 		yanpanel.setLocation(0, 0);
 
-		yanpanel.setBackground(Color.white);
-
+		yanpanel.setBackground(new Color(100, 20, 50,254));
+		
+		
 		JLabel l1, l2, l3, l4, l5, l6, l7;
-		l1 = new JLabel("  Para: " + Restaurant.para);
-		l1.setBounds(10, 10, 80, 30);
-		l2 = new JLabel("  Saat: " + Restaurant.saat);
-		l2.setBounds(10, 50, 80, 30);
-		l3 = new JLabel("  Yýldýz: " + Restaurant.yildiz);
-		l3.setBounds(10, 90, 80, 30);
-		
-		l4 = new JLabel("  Hamur: " + Restaurant.hamur[0]);
-		l4.setBounds(10, 130, 80, 30);
-		
-		l5 = new JLabel("  Kaþar: " + Restaurant.kasar[0]);
-		l5.setBounds(10, 170, 80, 30);		
+		l1 = new JLabel("  Para: " + Restaurant.para,SwingConstants.CENTER);
+		l1.setForeground(Color.white);
 
-		l6 = new JLabel("  Sucuk: " + Restaurant.sucuk[0]);
+		l1.setBounds(10, 10, 80, 30);
+		l2 = new JLabel("  Saat: " + Restaurant.saat,SwingConstants.CENTER);
+		l2.setBounds(10, 50, 80, 30);
+		l2.setForeground(Color.white);
+		
+		l3 = new JLabel("  Yýldýz: " + Restaurant.yildiz,SwingConstants.CENTER);
+		l3.setBounds(10, 90, 80, 30);
+		l3.setForeground(Color.white);
+		
+		l4 = new JLabel("  Hamur: " + Restaurant.hamur[0],SwingConstants.CENTER);
+		l4.setBounds(10, 130, 80, 30);
+		l4.setForeground(Color.white);
+		
+		l5 = new JLabel("  Kaþar: " + Restaurant.kasar[0],SwingConstants.CENTER);
+		l5.setBounds(10, 170, 80, 30);		
+		l5.setForeground(Color.white);
+
+		l6 = new JLabel("  Sucuk: " + Restaurant.sucuk[0],SwingConstants.CENTER);
 		l6.setBounds(210, 90, 80, 30);
+		l6.setForeground(Color.white);
 		
 		JButton button = new JButton();
 		JButton button0 = new JButton();
@@ -261,16 +270,25 @@ public class Grafik extends JPanel {
 		JButton button4 = new JButton();
 		JButton button5 = new JButton();
 		
+		button.setBackground(new Color(69,17,17,200));
+	    button.setForeground(Color.white);
+	    //button.setMargin(new Insets(0, 10, 10, 0));
+
 		button.setText("Çalýþanlar");
 		button.setBounds(10, 130, 80, 30);
 
 		button0.setText("Ýþ ilanlarý");
 		button0.setBounds(10, 250, 80, 30);
-
+		
+		button0.setBackground(new Color(69,17,17,200));
+	    button0.setForeground(Color.white);
+	    
 		button1.setText("Yemekler");
 		button1.setBounds(10, 290, 80, 30);
-
-		button1.addActionListener((ActionListener) new ActionListener() {
+		button1.setBackground(new Color(69,17,17,200));
+	    button1.setForeground(Color.white);
+		
+	    button1.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				create_yemekler_panel();
@@ -280,6 +298,8 @@ public class Grafik extends JPanel {
 		
 		button2.setText("Malzemeler");
 		button2.setBounds(10, 330, 80, 30);
+		button2.setBackground(new Color(69,17,17,200));
+	    button2.setForeground(Color.white);
 		
 		button2.addActionListener((ActionListener) new ActionListener() {
 			@Override
@@ -292,6 +312,8 @@ public class Grafik extends JPanel {
 
 		button3.setText("Saat Atla");
 		button3.setBounds(10, 330, 80, 30);
+		button3.setBackground(new Color(69,17,17,200));
+	    button3.setForeground(Color.white);
 		
 		button3.addActionListener((ActionListener) new ActionListener() {
 			@Override
@@ -317,7 +339,9 @@ public class Grafik extends JPanel {
 
 		button4.setText("Pause");
 		button4.setBounds(10, 370, 80, 30);
-
+		button4.setBackground(new Color(69,17,17,200));
+	    button4.setForeground(Color.white);
+		
 		button4.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -332,7 +356,8 @@ public class Grafik extends JPanel {
 		
 		button5.setText("Reset");
 		button5.setBounds(10,410,80,30);
-		
+		button5.setBackground(new Color(69,17,17,200));
+	    button5.setForeground(Color.white);		
 		/*
 		button5.addActionListener((ActionListener) new ActionListener() {
 			@Override
@@ -351,7 +376,7 @@ public class Grafik extends JPanel {
 		yanpanel.add(l5);
 		yanpanel.add(l6);
 		
-		yanpanel.add(button);
+		yanpanel.add(button);		
 		yanpanel.add(button0);
 		yanpanel.add(button1);
 		yanpanel.add(button2);
@@ -479,6 +504,7 @@ public class Grafik extends JPanel {
 			}
 		});
 		panel.add(cikisbtn);
+
 		this.add(panel);
 	}
 	
