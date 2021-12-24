@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
@@ -25,12 +26,16 @@ import java.awt.event.KeyListener;
 
 public class Grafik extends JPanel {
 	
-	int count1=0;
-	
+	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();
+	ArrayList<Staff> employees  = new ArrayList<>();
+
 	JPanel yanpanel = null;
 	JPanel panel_yemekler = null;
 	JPanel panel_malzemeler = null;
 	JPanel siparis_panel = null;
+	JPanel basvurular_panel = null;
+	JPanel calisanlar_panel = null;
+
 	boolean siparisPanelVisibility=false;
 	int posx = -150;
 	int posy = 100;
@@ -40,6 +45,7 @@ public class Grafik extends JPanel {
 	BufferedImage img3 = null;
 	boolean new_customer = true, oyunudurdur = false;;
 	JFrame jf = null;
+
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -70,6 +76,9 @@ public class Grafik extends JPanel {
 		panel_yemekler = new JPanel();
 		panel_malzemeler = new JPanel();
 		siparis_panel = new JPanel();
+		basvurular_panel = new JPanel();
+		calisanlar_panel = new JPanel();
+		
 		this.setLayout(null);
 		create_yanpanel();
 		try {
@@ -138,11 +147,13 @@ public class Grafik extends JPanel {
 		if (oyunudurdur == false) {
 			if (Customer.customer_per_hour > 0)
 
-				posx += 1;
+				posx += 5;
 		}
 	}
 
 	void create_siparis_panel() {
+		delete_menu(basvurular_panel);
+		delete_menu(calisanlar_panel);
 		delete_menu(panel_yemekler);
 		delete_menu(panel_malzemeler);
 		siparisPanelVisibility=true;
@@ -154,11 +165,8 @@ public class Grafik extends JPanel {
 
 		siparis_panel.setSize(400, 500);
 		siparis_panel.setBackground(new Color(0,0,0,0));
-		JLabel l;
-		l = new JLabel("Kaþarlý Tost",SwingConstants.CENTER);		
-		l.setOpaque(true);
+
 		
-		siparis_panel.add(l);
 		JLabel l1;
 		l1 = new JLabel("Fiyat: ");
 		JSlider slider = new JSlider(JSlider.HORIZONTAL, 0, 50, 25);
@@ -169,7 +177,6 @@ public class Grafik extends JPanel {
 		JPanel subpanel = new JPanel();
 		subpanel.add(l1, BorderLayout.WEST);
 		subpanel.add(slider, BorderLayout.EAST);
-		siparis_panel.add(subpanel, BorderLayout.SOUTH);
 
 		Random r = new Random();
 
@@ -183,7 +190,13 @@ public class Grafik extends JPanel {
 		for (Entry<String, String[]> me : Restaurant.yemekler.entrySet()) {
 			if (c == count) {
 
-				System.out.println(me.getKey());
+				JLabel l;
+				l = new JLabel(me.getKey(),SwingConstants.CENTER);		
+				l.setOpaque(true);
+				siparis_panel.add(l);
+				siparis_panel.add(subpanel, BorderLayout.SOUTH);
+
+
 				for (String i : me.getValue()) {
 					JLabel l1dn;
 					l1dn = new JLabel(i + ": ");
@@ -204,7 +217,7 @@ public class Grafik extends JPanel {
 							
 							Restaurant.malzemeler.get(i)[0] -= sliderdn.getValue();
 							oyunudurdur = false;
-							posx += 1;
+							posx += 5;
 
 						
 						}
@@ -294,12 +307,52 @@ public class Grafik extends JPanel {
 		button.setText("Çalýþanlar");
 		button.setBounds(10, 130, 80, 30);
 
-		button0.setText("Ýþ ilanlarý");
+		button.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				if (siparisPanelVisibility == false) {
+					delete_menu(panel_yemekler);
+					delete_menu(panel_malzemeler);
+					delete_menu(basvurular_panel);
+					delete_menu(calisanlar_panel);
+
+					create_calisanlar_panel();
+
+				}
+				
+				
+
+			}
+		});	
+		
+		
+		
+		button0.setText("Ýþ Baþvurularý");
 		button0.setBounds(10, 250, 80, 30);
 
 		button0.setBackground(new Color(69, 17, 17, 200));
 		button0.setForeground(Color.white);
 
+		button0.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				if (siparisPanelVisibility == false) {
+					delete_menu(panel_yemekler);
+					delete_menu(panel_malzemeler);
+					delete_menu(basvurular_panel);
+					delete_menu(calisanlar_panel);
+					
+					create_is_basvurulari_panel();
+
+				}
+				
+				
+
+			}
+		});		
+		
 		button1.setText("Yemekler");
 		button1.setBounds(10, 290, 80, 30);
 		button1.setBackground(new Color(69, 17, 17, 200));
@@ -311,6 +364,9 @@ public class Grafik extends JPanel {
 				if (siparisPanelVisibility == false) {
 					delete_menu(panel_yemekler);
 					delete_menu(panel_malzemeler);
+					delete_menu(basvurular_panel);
+					delete_menu(calisanlar_panel);
+
 					create_yemekler_panel();
 				}
 
@@ -328,6 +384,9 @@ public class Grafik extends JPanel {
 				if (siparisPanelVisibility == false) {
 					delete_menu(panel_yemekler);
 					delete_menu(panel_malzemeler);
+					delete_menu(basvurular_panel);
+					delete_menu(calisanlar_panel);
+					
 					create_malzemeler_panel();
 
 				}
@@ -550,4 +609,150 @@ public class Grafik extends JPanel {
 		this.add(panel_yemekler);
 	}
 
+	void create_is_basvurulari_panel() {
+		
+		basvurular_panel= new JPanel();
+
+		basvurular_panel.setLayout(null);
+
+		basvurular_panel.setLocation(450, 100);
+
+		basvurular_panel.setSize(300, 300);
+
+		basvurular_panel.setBackground(new Color(222, 222, 222, 200));
+
+		DefaultListModel<String> l1 = new DefaultListModel<>();
+
+		for (Staff s : employeeSuggestion ) {
+			l1.addElement("Ad: "+s.Ad+" Yetenek: "+s.Yetenek+" Maaþ:"+s.Maas+" Seviye:"+s.Seviye);
+
+		}
+
+		JList<String> list = new JList<>(l1);
+		list.setBackground(new Color(0, 0, 0, 200));
+		list.setForeground(Color.white);
+		list.setBounds(25, 25, 240, 250);
+
+		
+		JButton button = new JButton();
+
+		button.setText("Ýþe al");
+		button.setBounds(100, 200, 100, 30);
+		button.setBackground(new Color(69, 17, 17, 200));
+		button.setForeground(Color.white);
+		button.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (list.getSelectedIndex() != -1) {
+
+					employees.add(employeeSuggestion.get(list.getSelectedIndex()));
+					employeeSuggestion.remove(list.getSelectedIndex());
+					delete_menu(basvurular_panel);
+					create_is_basvurulari_panel();
+				
+				}
+			}
+		});		
+		
+		
+		JButton cikisbtn = new JButton();
+		// list.setBackground(new Color(0,0,0,200));
+		cikisbtn.setForeground(Color.red);
+
+		cikisbtn.setText("X");
+		cikisbtn.setBounds(270, 0, 30, 30);
+		cikisbtn.setMargin(new Insets(0, 0, 0, 0));
+
+		cikisbtn.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				delete_menu(basvurular_panel);
+
+			}
+		});
+		
+		basvurular_panel.add(button);
+
+		basvurular_panel.add(cikisbtn);
+
+		basvurular_panel.add(list);
+
+		this.add(basvurular_panel);		
+		
+	}
+	
+	void create_calisanlar_panel() {
+		
+		calisanlar_panel= new JPanel();
+
+		calisanlar_panel.setLayout(null);
+
+		calisanlar_panel.setLocation(450, 100);
+
+		calisanlar_panel.setSize(300, 300);
+
+		calisanlar_panel.setBackground(new Color(222, 222, 222, 200));
+
+		DefaultListModel<String> l1 = new DefaultListModel<>();
+
+		for (Staff s : employees) {
+			l1.addElement("Ad: "+s.Ad+" Yetenek: "+s.Yetenek+" Maaþ:"+s.Maas+" Seviye:"+s.Seviye);
+
+		}
+
+		JList<String> list = new JList<>(l1);
+		list.setBackground(new Color(0, 0, 0, 200));
+		list.setForeground(Color.white);
+		list.setBounds(25, 25, 240, 250);
+
+		
+		JButton button = new JButton();
+
+		button.setText("Kov");
+		button.setBounds(100, 200, 100, 30);
+		button.setBackground(new Color(69, 17, 17, 200));
+		button.setForeground(Color.white);
+		button.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (list.getSelectedIndex() != -1) {
+
+					employees.remove(list.getSelectedIndex());
+					delete_menu(calisanlar_panel);
+					create_is_basvurulari_panel();
+				
+				}
+			}
+		});		
+		
+		
+		JButton cikisbtn = new JButton();
+		// list.setBackground(new Color(0,0,0,200));
+		cikisbtn.setForeground(Color.red);
+
+		cikisbtn.setText("X");
+		cikisbtn.setBounds(270, 0, 30, 30);
+		cikisbtn.setMargin(new Insets(0, 0, 0, 0));
+
+		cikisbtn.addActionListener((ActionListener) new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				delete_menu(calisanlar_panel);
+
+			}
+		});
+		
+		calisanlar_panel.add(button);
+
+		calisanlar_panel.add(cikisbtn);
+
+		calisanlar_panel.add(list);
+
+		this.add(calisanlar_panel);		
+		
+	}	
+	
+	
 }

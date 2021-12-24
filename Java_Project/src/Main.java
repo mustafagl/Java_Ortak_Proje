@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -23,9 +24,11 @@ public class Main {
 		jf.setResizable(false);											//Yeniden Boyutlandırma
 		jf.add(bs);
 
+		Staff temp = new Staff(2);
+		bs.employeeSuggestion.add(temp);
 		while (true) {
 			long second = System.currentTimeMillis() - start;
-			System.out.println(second / 1000);
+			//System.out.println(second / 1000);
 			if (second / 1000 > 100) {
 				if (Restaurant.saat < 24) {
 
@@ -33,6 +36,14 @@ public class Main {
 					 start = System.currentTimeMillis();
 
 				} else {
+					if((int)Restaurant.yildiz==2) {
+						System.out.println("asdasdasklkas");
+						bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
+						Staff temp0 = new Staff(2);
+						bs.employeeSuggestion.add(temp0);
+					}
+					
+					
 					Restaurant.saat = 1;
 				}
 
