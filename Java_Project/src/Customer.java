@@ -1,5 +1,5 @@
 import java.util.Random;
-
+//Customer
 public class Customer {
 	static int customer_per_hour, positive = 50, negative = 50;
 
@@ -22,7 +22,7 @@ public class Customer {
 		else if (r.nextInt(max / 2) + max / 2 < value) {
 			positive += value - (max / 2);
 		}
-//
+
 	}
 
 

@@ -1,5 +1,5 @@
 import java.util.Random;
-
+//Staff
 public class Staff {
 
 	public int Maas, Seviye;

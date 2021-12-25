@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
+//Restaurant
 public class Restaurant {
 
 	static int para = 300, saat = 1, menugenisligi, nufus = 100;
