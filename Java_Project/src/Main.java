@@ -37,6 +37,7 @@ public class Main {
 		Staff temp= new Staff((int)Restaurant.yildiz);
 		bs.employeeSuggestion.add(temp);
 		
+		//
 
 	}
 
