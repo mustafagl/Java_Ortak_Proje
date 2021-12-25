@@ -117,7 +117,7 @@ public class Grafik extends JPanel {
 		try {
 			img0 = ImageIO.read(new File("image/background.jpg")); // src/background.jpeg Original
 			img1 = ImageIO.read(new File("image/table.png"));
-			img2 = ImageIO.read(new File("image/man_back_1.png"));
+			img2 = ImageIO.read(new File("image/cashier.png"));
 			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
 
@@ -160,7 +160,7 @@ public class Grafik extends JPanel {
 		g.drawImage(img4, posx-30, posy, 134, 495, null);
 		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, 200, 400, 882, 200, null);
-		g.drawImage(img2, 550, 300, 200, 300, null);
+		g.drawImage(img2, 520, 250, 264, 725, null);
 		
 		g.setColor(Color.black);
 		// String s = "Yemek";
