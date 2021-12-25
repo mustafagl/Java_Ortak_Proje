@@ -1,12 +1,22 @@
 import java.awt.Color;
-import java.util.ArrayList;
-
+import java.io.IOException;
+import java.io.File;
+import javax.sound.sampled.*;
+import java.util.Scanner;
 import javax.swing.JFrame;
 
 public class Main {
 	static long start;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+		
+		File music=new File("Mi_Dispiace __Mini_Vandals.wav");
+		AudioInputStream audioStream=AudioSystem.getAudioInputStream(music);
+		Clip clip=AudioSystem.getClip();
+		clip.open(audioStream);
+		
+		clip.start();	
+		
 		long start = System.currentTimeMillis();
 		Customer.musterigelmeorani();
 
@@ -24,11 +34,9 @@ public class Main {
 		jf.setResizable(false);											//Yeniden Boyutlandırma
 		jf.add(bs);
 
-		Staff temp = new Staff(2);
-		bs.employeeSuggestion.add(temp);
 		while (true) {
 			long second = System.currentTimeMillis() - start;
-			//System.out.println(second / 1000);
+			System.out.println(second / 1000);
 			if (second / 1000 > 100) {
 				if (Restaurant.saat < 24) {
 
@@ -36,14 +44,6 @@ public class Main {
 					 start = System.currentTimeMillis();
 
 				} else {
-					if((int)Restaurant.yildiz==2) {
-						System.out.println("asdasdasklkas");
-						bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
-						Staff temp0 = new Staff(2);
-						bs.employeeSuggestion.add(temp0);
-					}
-					
-					
 					Restaurant.saat = 1;
 				}
 
