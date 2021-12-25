@@ -119,7 +119,7 @@ public class Grafik extends JPanel {
 			img1 = ImageIO.read(new File("image/table.png"));
 			img2 = ImageIO.read(new File("image/man_back_1.png"));
 			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
-			img4 = ImageIO.read(new File("image/customer_men.png"));
+			img4 = ImageIO.read(new File("image/customer_man0.png"));
 
 		} catch (IOException e) {
 			System.out.print("x");
