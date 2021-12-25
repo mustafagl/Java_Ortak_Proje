@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 //Grafik
 
 public class Grafik extends JPanel {
@@ -46,6 +47,7 @@ public class Grafik extends JPanel {
 	BufferedImage img1 = null;
 	BufferedImage img2 = null;
 	BufferedImage img3 = null;
+	BufferedImage img4 = null;
 	boolean new_customer = true, oyunudurdur = false;;
 	JFrame jf = null;
 
@@ -117,6 +119,7 @@ public class Grafik extends JPanel {
 			img1 = ImageIO.read(new File("image/table.png"));
 			img2 = ImageIO.read(new File("image/man_back_1.png"));
 			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
+			img4 = ImageIO.read(new File("image/customer_men.png"));
 
 		} catch (IOException e) {
 			System.out.print("x");
@@ -126,7 +129,8 @@ public class Grafik extends JPanel {
 
 	void ciz_karakter(Graphics g) {
 		float scale = 1f;
-
+/*		
+		Çizgi Adam
 		g.setColor(Color.white);
 		g.fillRect((int) (posx * scale), (int) (posy * scale), (int) (100 * scale), (int) (100 * scale));
 		g.setColor(Color.black);
@@ -143,7 +147,7 @@ public class Grafik extends JPanel {
 				(int) (150 * scale));
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
-
+*/
 		/*
 		 * g.setColor(Color.black); g.fillArc(400, 10, 400, 50, 0, 360); String x =
 		 * "Restoran Oyunu"; g.setColor(Color.white); g.setFont(new Font("TimesRoman",
@@ -151,10 +155,13 @@ public class Grafik extends JPanel {
 		 * 21); g.setColor(c); g.fillRect(0, 400, 1200, 200);
 		 */
 
+		
+		
+		g.drawImage(img4, posx-30, posy, 134, 495, null);
+		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, 200, 400, 882, 200, null);
 		g.drawImage(img2, 550, 300, 200, 300, null);
-
-		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
+		
 		g.setColor(Color.black);
 		// String s = "Yemek";
 		// g.drawString(s, posx + 110, posy + 20);
