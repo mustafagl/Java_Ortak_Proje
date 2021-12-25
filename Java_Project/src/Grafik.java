@@ -25,7 +25,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Grafik extends JPanel {
-	
+	static long start;
+
 	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();
 	ArrayList<Staff> employees  = new ArrayList<>();
 
@@ -50,6 +51,34 @@ public class Grafik extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
+			long second = System.currentTimeMillis() - start;
+			//System.out.println(second / 1000);
+			if (second / 1000 > 10) {
+				if (Restaurant.saat < 24) {
+
+					Restaurant.saat += 1;
+					 start = System.currentTimeMillis();
+
+				} else {
+					Restaurant.saat = 1;
+					employeeSuggestion.removeAll(employeeSuggestion);
+					Staff temp= new Staff((int)Restaurant.yildiz);
+					employeeSuggestion.add(temp);
+				}
+
+				Customer.musterigelmeorani();
+
+				delete_menu(yanpanel);
+				
+				screate();
+				
+				// System.out.println(Customer.customer_per_hour);
+
+			}
+				
+		
+		
+		
 		g.drawImage(img0, 150, -100, 1080, 764, null);
 		// g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		// background.jpeg 1080x764
@@ -128,7 +157,7 @@ public class Grafik extends JPanel {
 		// String s = "Yemek";
 		// g.drawString(s, posx + 110, posy + 20);
 
-		if (posx == 650 && oyunudurdur == false) {
+		if (posx == 550 && oyunudurdur == false) {
 			oyunudurdur = true;
 			if(siparisPanelVisibility==false)
 			create_siparis_panel();
@@ -145,7 +174,7 @@ public class Grafik extends JPanel {
 		}
 
 		if (oyunudurdur == false) {
-			if (Customer.customer_per_hour > 0)
+			if (Customer.customer_per_hour >= 0)
 
 				posx += 5;
 		}
@@ -214,11 +243,24 @@ public class Grafik extends JPanel {
 						@Override
 						public void actionPerformed(ActionEvent e) {
 							siparisPanelVisibility=false;						
-							
-							Restaurant.malzemeler.get(i)[0] -= sliderdn.getValue();
+							if(Restaurant.malzemeler.get(i)[0]>=sliderdn.getValue()) {
+								Restaurant.malzemeler.get(i)[0] -= sliderdn.getValue();
+
+								
+								Customer.memnuniyetHesap(sliderdn.getMaximum(),sliderdn.getValue());
+								
+								System.out.println();
+								
+								Customer.negative++;
+								System.out.println(Customer.satisfaction());
+							}
+							else {
+								Restaurant.malzemeler.get(i)[0]=0;
+							}	
 							oyunudurdur = false;
 							posx += 5;
-
+							delete_menu(yanpanel);
+							create_yanpanel();
 						
 						}
 					});
@@ -233,7 +275,6 @@ public class Grafik extends JPanel {
 
 
 		button.addActionListener((ActionListener) new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				Restaurant.para += slider.getValue() ;
 				delete_menu(yanpanel);
@@ -267,7 +308,7 @@ public class Grafik extends JPanel {
 
 		yanpanel.setBackground(new Color(100, 20, 50, 254));
 
-		JLabel l1, l2, l3, l4, l5, l6, l7;
+		JLabel l1, l2, l3, l4, l5, l6, l7, l8;
 		l1 = new JLabel("  Para: " + Restaurant.para, SwingConstants.CENTER);
 		l1.setForeground(Color.white);
 
@@ -292,6 +333,14 @@ public class Grafik extends JPanel {
 		l6.setBounds(210, 90, 80, 30);
 		l6.setForeground(Color.white);
 
+		l7 = new JLabel("  Sýradaki Müþteri: " + Customer.customer_per_hour, SwingConstants.CENTER);
+		l7.setBounds(210, 90, 80, 30);
+		l7.setForeground(Color.white);
+		
+		l8 = new JLabel("  Memnuniyeti: " + Customer.satisfaction(), SwingConstants.CENTER);
+		l8.setBounds(210, 90, 80, 30);
+		l8.setForeground(Color.white);
+		
 		JButton button = new JButton();
 		JButton button0 = new JButton();
 		JButton button1 = new JButton();
@@ -406,7 +455,7 @@ public class Grafik extends JPanel {
 				if (Restaurant.saat < 24) {
 
 					Restaurant.saat += 1;
-					Main.start = System.currentTimeMillis();
+					start = System.currentTimeMillis();
 
 				} else {
 					Restaurant.saat = 0;
@@ -457,6 +506,8 @@ public class Grafik extends JPanel {
 		yanpanel.add(l4);
 		yanpanel.add(l5);
 		yanpanel.add(l6);
+		yanpanel.add(l7);
+		yanpanel.add(l8);
 
 		yanpanel.add(button);
 		yanpanel.add(button0);
