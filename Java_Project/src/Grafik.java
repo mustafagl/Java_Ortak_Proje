@@ -113,10 +113,10 @@ public class Grafik extends JPanel {
 		this.setLayout(null);
 		create_yanpanel();
 		try {
-			img0 = ImageIO.read(new File("src/background.jpg")); // src/background.jpeg Original
-			img1 = ImageIO.read(new File("src/table.png"));
-			img2 = ImageIO.read(new File("src/man_back_1.png"));
-			img3 = ImageIO.read(new File("src/kasarli_tost.png"));
+			img0 = ImageIO.read(new File("image/background.jpg")); // src/background.jpeg Original
+			img1 = ImageIO.read(new File("image/table.png"));
+			img2 = ImageIO.read(new File("image/man_back_1.png"));
+			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
 
 		} catch (IOException e) {
 			System.out.print("x");
