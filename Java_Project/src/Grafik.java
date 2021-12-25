@@ -26,6 +26,7 @@ import java.awt.event.KeyListener;
 //Grafik
 
 public class Grafik extends JPanel {
+	
 	static long start;
 
 	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();

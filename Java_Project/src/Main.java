@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
-		File music=new File("Mi_Dispiace __Mini_Vandals.wav");
+		File music=new File("music/Mi_Dispiace __Mini_Vandals.wav");
 		AudioInputStream audioStream=AudioSystem.getAudioInputStream(music);
 		Clip clip=AudioSystem.getClip();
 		clip.open(audioStream);
@@ -36,8 +36,6 @@ public class Main {
 		bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
 		Staff temp= new Staff((int)Restaurant.yildiz);
 		bs.employeeSuggestion.add(temp);
-		
-		//
 
 	}
 
