@@ -22,7 +22,7 @@ public class Customer {
 		else if (r.nextInt(max / 2) + max / 2 < value) {
 			positive += value - (max / 2);
 		}
-
+//
 	}
 
 
