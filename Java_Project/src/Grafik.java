@@ -83,7 +83,7 @@ public class Grafik extends JPanel {
 		
 		
 		
-		g.drawImage(img0, 150, -100, 1080, 764, null);
+		g.drawImage(img0, 150, -100, 1240, 800, null);
 		// g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		// background.jpeg 1080x764
 		//System.out.println(Customer.customer_per_hour);
