@@ -21,7 +21,6 @@ public class Main extends JPanel {
 		Customer.musterigelmeorani();
 
 		Restaurant.init_malzemeler();
-		Restaurant.init_yemekler();
 		
 		Grafik bs = new Grafik();
 		bs.image_oku();
@@ -34,10 +33,17 @@ public class Main extends JPanel {
 		jf.setResizable(false);											//Yeniden Boyutlandýrma
 		jf.add(bs);
 
+//
 		bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
-		Staff temp= new Staff((int)Restaurant.yildiz);
+		Staff temp= new Staff(2);
 		bs.employeeSuggestion.add(temp);
-
+		
+		Staff temp0= new Staff(2);
+		temp0.Yetenek="tost";
+		temp0.Maas=0;
+		temp0.Seviye=5;
+		bs.employees.add(temp0);
+		Restaurant.init_yemekler(bs.employees);
 	}
 
 }
