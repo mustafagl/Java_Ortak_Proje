@@ -14,7 +14,8 @@ public class Main {
 		Clip clip=AudioSystem.getClip();
 		clip.open(audioStream);
 		
-		clip.start();	
+		clip.start();
+		clip.loop(1);
 		
 		long start = System.currentTimeMillis();
 		Customer.musterigelmeorani();

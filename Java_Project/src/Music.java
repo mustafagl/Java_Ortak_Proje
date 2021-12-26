@@ -9,7 +9,7 @@ public class Music {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		File file = new File("music/Mi_Dispiace __Mini_Vandals.wav");
+		File file = new File("music/Frozen_in_Love__Aakash_Gandhi.wav");
 		AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
 		Clip clip = AudioSystem.getClip();
 		clip.open(audioStream);
@@ -25,6 +25,7 @@ public class Music {
 			
 			switch(response) {
 				case ("P"): clip.start();
+							clip.loop(1);
 				break;
 				case ("S"): clip.stop();
 				break;
