@@ -5,7 +5,7 @@ import javax.sound.sampled.*;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-//Main
+
 public class Main extends JPanel {
 
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
@@ -14,9 +14,8 @@ public class Main extends JPanel {
 		AudioInputStream audioStream=AudioSystem.getAudioInputStream(music);
 		Clip clip=AudioSystem.getClip();
 		clip.open(audioStream);
-		
-		clip.start();
-		clip.loop(1);
+		clip.start();							//Müzik baþlat
+		clip.loop(1);							//Müzik Döngü Açýk
 		
 		long start = System.currentTimeMillis();
 		Customer.musterigelmeorani();
