@@ -26,13 +26,14 @@ import java.awt.event.KeyListener;
 
 //Grafik
 
-public class Grafik extends JPanel {
+public class Grafik extends Main {
 	
 	static long start;
 
 	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();
 	ArrayList<Staff> employees  = new ArrayList<>();
 
+	
 	JPanel yanpanel = null;
 	JPanel panel_yemekler = null;
 	JPanel panel_malzemeler = null;
@@ -116,7 +117,7 @@ public class Grafik extends JPanel {
 		create_yanpanel();
 		try {
 			img0 = ImageIO.read(new File("image/background.jpg")); // src/background.jpeg Original
-			img1 = ImageIO.read(new File("image/table.png"));
+			img1 = ImageIO.read(new File("image/table0.png"));
 			img2 = ImageIO.read(new File("image/cashier.png"));
 			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
@@ -159,7 +160,7 @@ public class Grafik extends JPanel {
 		
 		g.drawImage(img4, posx-30, posy, 134, 495, null);
 		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
-		g.drawImage(img1, 200, 400, 882, 200, null);
+		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
 		
 		g.setColor(Color.black);

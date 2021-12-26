@@ -4,8 +4,9 @@ import java.io.File;
 import javax.sound.sampled.*;
 import java.util.Scanner;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 //Main
-public class Main {
+public class Main extends JPanel {
 
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
