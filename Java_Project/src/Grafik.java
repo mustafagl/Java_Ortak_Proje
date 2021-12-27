@@ -26,8 +26,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-
-public class Grafik extends Main {
+public class Grafik extends JPanel {
 	
 	static long start;
 
