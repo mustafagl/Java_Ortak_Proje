@@ -6,8 +6,9 @@ public class Restaurant {
 
 	static int para = 300, saat = 1, menugenisligi, nufus = 100, kira=300;
 	static int[] kasar = { 20, 10 }, sucuk = { 20, 15 }, hamur = { 30, 5 };
-	static String[] kasarlitost = { "kasar", "hamur" }, sucuklutost = { "sucuk", "hamur" },
-			karisiktost = { "kasar", "sucuk", "hamur" };
+	static String[] kasarli_tost = { "kasar", "hamur" }, 
+					sucuklu_tost = { "sucuk", "hamur" },
+					karisik_tost = { "kasar", "sucuk", "hamur" };
 	static float yildiz = 2.7f;
 	int calisansayisi;
 
@@ -26,13 +27,13 @@ public class Restaurant {
 
 		for (int i = 0; i < calisanlar.size(); i++) {
 			if (calisanlar.get(i).Yetenek == "tost") {
-				yemekler.put("kasarlitost", kasarlitost);
-				yemekler.put("sucuklutost", sucuklutost);
-				yemekler.put("karisiktost", karisiktost);
+				yemekler.put("Kaþarlý Tost", kasarli_tost);
+				yemekler.put("Sucuklu Tost", sucuklu_tost);
+				yemekler.put("Karýþýk Tost", karisik_tost);
 			}
 			if (calisanlar.get(i).Yetenek == "pizza") {
-				yemekler.put("Kaþarlý Pizza", kasarlitost);
-				yemekler.put("Sucuklu Kaþarlý Pizza", sucuklutost);
+				yemekler.put("Kaþarlý Pizza", kasarli_tost);
+				yemekler.put("Sucuklu Kaþarlý Pizza", sucuklu_tost);
 			}			
 		}
 

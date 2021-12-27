@@ -33,7 +33,7 @@ public class Main extends JPanel {
 		jf.setResizable(false);											//Yeniden Boyutlandýrma
 		jf.add(bs);
 
-//
+
 		bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
 		Staff temp= new Staff(2);
 		bs.employeeSuggestion.add(temp);
