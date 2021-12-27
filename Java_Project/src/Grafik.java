@@ -153,24 +153,14 @@ public class Grafik extends Main {
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 */
-		/*
-		 * g.setColor(Color.black); g.fillArc(400, 10, 400, 50, 0, 360); String x =
-		 * "Restoran Oyunu"; g.setColor(Color.white); g.setFont(new Font("TimesRoman",
-		 * Font.PLAIN, 32)); g.drawString(x, 500, 45); Color c = new Color(171, 111,
-		 * 21); g.setColor(c); g.fillRect(0, 400, 1200, 200);
-		 */
-
-		
-		
+			
 		g.drawImage(img4, posx-30, posy, 134, 495, null);
 		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
 		g.drawImage(img5, 1000, 300, 176, 195, null);
+		// Son eklenen önceki eklenen fotoğrafların üstüne çıkar.
 		
-		g.setColor(Color.black);
-		// String s = "Yemek";
-		// g.drawString(s, posx + 110, posy + 20);
 
 		if (posx == 550 && oyunudurdur == false) {
 			oyunudurdur = true;
