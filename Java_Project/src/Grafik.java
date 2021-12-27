@@ -516,12 +516,14 @@ void create_siparis_panel() {
 		button5.setBackground(new Color(69, 17, 17, 200));
 		button5.setForeground(Color.white);
 		/*
-		 * button5.addActionListener((ActionListener) new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent e) {
-		 * 
-		 * 
-		 * } }};
+		button5.addActionListener((ActionListener) new ActionListener() {
+		
+			@Override 
+			public void actionPerformed(ActionEvent e) {
+		
+		 
+			} 
+		});
 		 * 
 		 */
 
