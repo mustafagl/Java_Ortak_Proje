@@ -1,4 +1,4 @@
-
+	
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -50,6 +50,7 @@ public class Grafik extends Main {
 	BufferedImage img2 = null;
 	BufferedImage img3 = null;
 	BufferedImage img4 = null;
+	BufferedImage img5 = null;
 	boolean new_customer = true, oyunudurdur = false;;
 	JFrame jf = null;
 
@@ -123,6 +124,7 @@ public class Grafik extends Main {
 			img2 = ImageIO.read(new File("image/cashier.png"));
 			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
+			img5 = ImageIO.read(new File("image/cash_register.png"));
 
 		} catch (IOException e) {
 			System.out.print("x");
@@ -164,6 +166,7 @@ public class Grafik extends Main {
 		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
+		g.drawImage(img5, 1000, 300, 176, 195, null);
 		
 		g.setColor(Color.black);
 		// String s = "Yemek";
