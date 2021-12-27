@@ -51,6 +51,16 @@ public class Grafik extends Main {
 	BufferedImage img3 = null;
 	BufferedImage img4 = null;
 	BufferedImage img5 = null;
+	/*
+	BufferedImage img6 = null;
+	BufferedImage img7 = null;
+	BufferedImage img8 = null;
+	BufferedImage img9 = null;
+	BufferedImage img10 = null;
+	BufferedImage img11 = null;
+	BufferedImage img12 = null;
+	*/
+	
 	boolean new_customer = true, oyunudurdur = false;;
 	JFrame jf = null;
 
@@ -122,9 +132,18 @@ public class Grafik extends Main {
 			img0 = ImageIO.read(new File("image/background.jpg")); // src/background.jpeg Original
 			img1 = ImageIO.read(new File("image/table0.png"));
 			img2 = ImageIO.read(new File("image/cashier.png"));
-			img3 = ImageIO.read(new File("image/kasarli_tost.png"));
+			img3 = ImageIO.read(new File("image/cash_register.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
-			img5 = ImageIO.read(new File("image/cash_register.png"));
+			img5 = ImageIO.read(new File("image/kasarli_tost.png"));
+			/*
+			img6 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
+			img7 = ImageIO.read(new File("image/ayvalik_tost.png"));
+			img8 = ImageIO.read(new File("image/diyet_tost.png"));
+			img9 = ImageIO.read(new File("image/kavurmali_tost.png"));
+			img10 =ImageIO.read(new File("image/salamli_tost.png"));
+			img11 =ImageIO.read(new File("image/sucuklu_tost.png"));
+			img12 =ImageIO.read(new File("image/yengen_tost.png")); 
+			*/
 
 		} catch (IOException e) {
 			System.out.print("x");
@@ -155,10 +174,10 @@ public class Grafik extends Main {
 */
 			
 		g.drawImage(img4, posx-30, posy, 134, 495, null);
-		g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
+		g.drawImage(img5, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
-		g.drawImage(img5, 1000, 300, 176, 195, null);
+		g.drawImage(img3, 1000, 300, 176, 195, null);
 		// Son eklenen önceki eklenen fotoğrafların üstüne çıkar.
 		
 
