@@ -26,13 +26,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-public class Grafik extends JPanel {
+public class Grafik extends JPanel implements ActionListener {
 	
 	static long start;
 
 	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();
 	ArrayList<Staff> employees  = new ArrayList<>();
 
+	
 	
 	JPanel yanpanel = null;
 	JPanel panel_yemekler = null;
@@ -514,17 +515,22 @@ void create_siparis_panel() {
 		button5.setBounds(10, 410, 80, 30);
 		button5.setBackground(new Color(69, 17, 17, 200));
 		button5.setForeground(Color.white);
+		
+		
 		/*
 		button5.addActionListener((ActionListener) new ActionListener() {
 		
 			@Override 
 			public void actionPerformed(ActionEvent e) {
-		
+				if(e.getSource()==button5) {
+					this.remove();
+					
+				}
 		 
 			} 
 		});
-		 * 
-		 */
+		*/ 
+		 
 
 		yanpanel.add(l1);
 		yanpanel.add(l2);
@@ -838,6 +844,12 @@ void create_calisanlar_panel() {
 		this.add(calisanlar_panel);
 
 	}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	
+}
 	
 	
 }
