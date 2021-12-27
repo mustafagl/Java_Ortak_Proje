@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Restaurant {
+public class Restaurant extends Grafik {
 
 	static int para = 300, saat = 1, menugenisligi, nufus = 100, kira=300;
 	static int[] kasar = { 20, 10 }, sucuk = { 20, 15 }, hamur = { 30, 5 };
