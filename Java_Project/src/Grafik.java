@@ -86,7 +86,7 @@ public class Grafik extends JPanel{
 					employeeSuggestion.removeAll(employeeSuggestion);
 					Staff temp= new Staff((int)Restaurant.yildiz);
 					employeeSuggestion.add(temp);
-					Restaurant.para-=Restaurant.kira*Restaurant.yildiz;
+					Restaurant.para-=Restaurant.kira;
 				}
 
 				Customer.musterigelmeorani();
@@ -395,7 +395,7 @@ void create_siparis_panel() {
 		l8.setBounds(210, 90, 80, 30);
 		l8.setForeground(Color.white);
 
-		l9 = new JLabel("  Kira: " + Restaurant.kira*Restaurant.yildiz, SwingConstants.CENTER);
+		l9 = new JLabel("  Kira: " + Restaurant.kira, SwingConstants.CENTER);
 		l9.setBounds(210, 90, 80, 30);
 		l9.setForeground(Color.white);		
 		
