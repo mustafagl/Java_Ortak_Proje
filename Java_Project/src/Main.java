@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.File;
 import javax.sound.sampled.*;
 import java.util.Scanner;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -34,7 +36,9 @@ public class Main {
 		jf.setVisible(true);											//Görünürlük
 		jf.setResizable(false);											//Yeniden Boyutlandýrma
 		jf.add(bs);
-
+		
+		ImageIcon image = new ImageIcon("image/restaurant_app_icon.png");
+		jf.setIconImage(image.getImage());
 
 		bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
 		Staff temp= new Staff(2);
