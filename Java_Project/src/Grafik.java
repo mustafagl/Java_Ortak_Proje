@@ -203,7 +203,7 @@ public class Grafik extends JPanel{
 		g.drawImage(img8, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
-		g.drawImage(img3, 1000, 300, 176, 195, null);
+		g.drawImage(img3, 800, 300, 176, 195, null);
 		// Son eklenen önceki eklenen fotoğrafların üstüne çıkar.
 		
 
@@ -211,7 +211,7 @@ public class Grafik extends JPanel{
 			oyunudurdur = true;
 			if(siparisPanelVisibility==false)
 			create_siparis_panel();
-
+			
 		}
 		if (posx > 1200) {
 			new_customer = true;
