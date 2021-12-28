@@ -10,6 +10,8 @@ public class Main {
 
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
+		Scanner scanner = new Scanner(System.in);
+		
 		File music=new File("music/Frozen_in_Love__Aakash_Gandhi.wav");
 		AudioInputStream audioStream=AudioSystem.getAudioInputStream(music);
 		Clip clip=AudioSystem.getClip();
@@ -44,6 +46,27 @@ public class Main {
 		temp0.Seviye=5;
 		bs.employees.add(temp0);
 		Restaurant.init_yemekler(bs.employees);
+		
+		String response = "";
+		
+		while(!response.equals("Q")) {
+			System.out.println("P = Müzik Oynat, S = Müzik Durdur, R = Müziði Yeniden Baþlat");
+			System.out.print("Ne yapmak istersin? ");
+			
+			response = scanner.next();
+			response = response.toUpperCase();
+			
+			switch(response) {
+				case ("P"): clip.start();
+							clip.loop(1);
+				break;
+				case ("S"): clip.stop();
+				break;
+				case ("R"): clip.setMicrosecondPosition(0);
+				break;
+				default: System.out.println("Geçerli bir cevap veriniz.");
+			}
+		 }
 	}
 
 }
