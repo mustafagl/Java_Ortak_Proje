@@ -1,5 +1,5 @@
 import java.util.Random;
-//Staff
+
 public class Staff {
 
 	public int Maas, Seviye;
@@ -8,7 +8,7 @@ public class Staff {
 	
 	
 	
-	Staff(int Seviye) {
+	Staff(int Seviye){
 
 		this.Seviye = Seviye;
 		Random r = new Random();
@@ -22,7 +22,6 @@ public class Staff {
 				Ad="şef";
 		}
 
-		
 		
 	}
 

@@ -1,4 +1,3 @@
-	
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -25,15 +24,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-
-public class Grafik extends JPanel implements ActionListener {
-	
+public class Grafik extends JPanel{
+// * public class Grafik extends JPanel implements ActionListener {
 	static long start;
 
 	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();
 	ArrayList<Staff> employees  = new ArrayList<>();
 
-	
 	
 	JPanel yanpanel = null;
 	JPanel panel_yemekler = null;
@@ -98,8 +95,6 @@ public class Grafik extends JPanel implements ActionListener {
 		
 		
 		g.drawImage(img0, 150, -100, 1240, 800, null);
-		// g.drawImage(img3, posx + 100, posy - 100, 199, 166, null);
-		// background.jpeg 1080x764
 		//System.out.println(Customer.customer_per_hour);
 		if (Customer.customer_per_hour >= 0 && new_customer == true) {
 			Customer.customer_per_hour -= 1;
@@ -171,8 +166,7 @@ public class Grafik extends JPanel implements ActionListener {
 				(int) (150 * scale));
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
-*/
-			
+*/	
 		g.drawImage(img4, posx-30, posy, 134, 495, null);
 		g.drawImage(img5, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
@@ -845,11 +839,13 @@ void create_calisanlar_panel() {
 
 	}
 
+/*
+ *
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 	
 }
-	
+*/	
 	
 }
