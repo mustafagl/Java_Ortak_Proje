@@ -36,6 +36,7 @@ public class Main {
 		jf.setVisible(true);											//Görünürlük
 		jf.setResizable(false);											//Yeniden Boyutlandýrma
 		jf.add(bs);
+		jf.setLocationRelativeTo(null);
 		
 		ImageIcon image = new ImageIcon("image/restaurant_app_icon.png");
 		jf.setIconImage(image.getImage());
