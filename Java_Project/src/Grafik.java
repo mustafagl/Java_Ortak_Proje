@@ -48,6 +48,12 @@ public class Grafik extends JPanel{
 	BufferedImage img3 = null;
 	BufferedImage img4 = null;
 	BufferedImage img5 = null;
+	BufferedImage img6 = null;
+	BufferedImage img7 = null;
+	BufferedImage img8 = null;
+	BufferedImage[] customersimg = new BufferedImage[7];
+
+
 	/*
 	BufferedImage img6 = null;
 	BufferedImage img7 = null;
@@ -58,6 +64,8 @@ public class Grafik extends JPanel{
 	BufferedImage img12 = null;
 	*/
 	
+	int c=0;
+	int musterifoto=0;
 	boolean new_customer = true, oyunudurdur = false;;
 	JFrame jf = null;
 
@@ -130,14 +138,26 @@ public class Grafik extends JPanel{
 			img3 = ImageIO.read(new File("image/cash_register.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
 			img5 = ImageIO.read(new File("image/kasarli_tost.png"));
+			img6 =ImageIO.read(new File("image/sucuklu_tost.png"));
+			img7 =ImageIO.read(new File("image/karisik_tost.png")); 
+			
+			
+			customersimg[0] = ImageIO.read(new File("image/customer_man0.png"));
+			customersimg[1] = ImageIO.read(new File("image/customer_man1.png"));
+			customersimg[2] = ImageIO.read(new File("image/customer_man2.png"));
+			customersimg[3] = ImageIO.read(new File("image/customer_muslim_woman.png"));
+			customersimg[4] = ImageIO.read(new File("image/customer_old_man.png"));
+			customersimg[5] = ImageIO.read(new File("image/customer_old_woman.png"));
+			customersimg[6] = ImageIO.read(new File("image/customer_woman.png"));
+
+
 			/*
 			img6 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
 			img7 = ImageIO.read(new File("image/ayvalik_tost.png"));
 			img8 = ImageIO.read(new File("image/diyet_tost.png"));
 			img9 = ImageIO.read(new File("image/kavurmali_tost.png"));
 			img10 =ImageIO.read(new File("image/salamli_tost.png"));
-			img11 =ImageIO.read(new File("image/sucuklu_tost.png"));
-			img12 =ImageIO.read(new File("image/karisik_tost.png")); 
+
 			*/
 
 		} catch (IOException e) {
@@ -167,8 +187,20 @@ public class Grafik extends JPanel{
 		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
 */	
-		g.drawImage(img4, posx-30, posy, 134, 495, null);
-		g.drawImage(img5, posx + 100, posy - 100, 199, 166, null);
+		
+		
+		g.drawImage(customersimg[musterifoto], posx-30, posy, 134, 495, null);
+		
+		if(c==0) {
+			img8=img6;
+		}
+		if(c==1) {
+			img8=img7;
+		}
+		if(c==2) {
+			img8=img5;
+		}
+		g.drawImage(img8, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
 		g.drawImage(img3, 1000, 300, 176, 195, null);
@@ -183,7 +215,9 @@ public class Grafik extends JPanel{
 		}
 		if (posx > 1200) {
 			new_customer = true;
-
+			Random r = new Random();
+			c = r.nextInt(Restaurant.yemekler.size());
+			musterifoto= r.nextInt(customersimg.length);
 			posx -= 1300;
 
 		} else {
@@ -229,7 +263,6 @@ void create_siparis_panel() {
 		JButton button;
 		button = new JButton();
 		button.setText("Tamamla");
-		int c = r.nextInt(Restaurant.yemekler.size());
 		int count = 0;
 
 		for (Entry<String, String[]> me : Restaurant.yemekler.entrySet()) {
