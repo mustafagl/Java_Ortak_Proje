@@ -745,7 +745,7 @@ void create_siparis_panel() {
 		JList<String> list = new JList<>(l1);
 		list.setBackground(new Color(0, 0, 0, 200));
 		list.setForeground(Color.white);
-		list.setBounds(25, 25, 240, 250);
+		list.setBounds(15, 25, 270, 250);
 
 		JButton button = new JButton();
 
@@ -821,7 +821,7 @@ void create_calisanlar_panel() {
 		JList<String> list = new JList<>(l1);
 		list.setBackground(new Color(0, 0, 0, 200));
 		list.setForeground(Color.white);
-		list.setBounds(25, 25, 240, 250);
+		list.setBounds(15, 25, 270, 250);
 
 		JButton button = new JButton();
 
