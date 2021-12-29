@@ -51,7 +51,7 @@ public class Grafik extends JPanel{
 	BufferedImage img6 = null;
 	BufferedImage img7 = null;
 	BufferedImage img8 = null;
-	BufferedImage[] customersimg = new BufferedImage[7];
+	BufferedImage[] customersimg = new BufferedImage[6];
 
 
 	/*
@@ -102,7 +102,6 @@ public class Grafik extends JPanel{
 		
 		
 		g.drawImage(img0, 150, -100, 1240, 800, null);
-		//System.out.println(Customer.customer_per_hour);
 		if (Customer.customer_per_hour >= 0 && new_customer == true) {
 			Customer.customer_per_hour -= 1;
 		}
@@ -137,26 +136,23 @@ public class Grafik extends JPanel{
 			img3 = ImageIO.read(new File("image/cash_register.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
 			img5 = ImageIO.read(new File("image/kasarli_tost.png"));
-			img6 =ImageIO.read(new File("image/sucuklu_tost.png"));
-			img7 =ImageIO.read(new File("image/karisik_tost.png")); 
+			img6 = ImageIO.read(new File("image/sucuklu_tost.png"));
+			img7 = ImageIO.read(new File("image/karisik_tost.png")); 
 			
 			
 			customersimg[0] = ImageIO.read(new File("image/customer_man0.png"));
 			customersimg[1] = ImageIO.read(new File("image/customer_man1.png"));
 			customersimg[2] = ImageIO.read(new File("image/customer_man2.png"));
 			customersimg[3] = ImageIO.read(new File("image/customer_muslim_woman.png"));
-			customersimg[4] = ImageIO.read(new File("image/customer_old_man.png"));
-			customersimg[5] = ImageIO.read(new File("image/customer_old_woman.png"));
-			customersimg[6] = ImageIO.read(new File("image/customer_woman.png"));
-
+			customersimg[4] = ImageIO.read(new File("image/customer_old_woman.png"));
+			customersimg[5] = ImageIO.read(new File("image/customer_woman.png"));
 
 			/*
-			img6 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
-			img7 = ImageIO.read(new File("image/ayvalik_tost.png"));
-			img8 = ImageIO.read(new File("image/diyet_tost.png"));
-			img9 = ImageIO.read(new File("image/kavurmali_tost.png"));
-			img10 =ImageIO.read(new File("image/salamli_tost.png"));
-
+			img8 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
+			img9 = ImageIO.read(new File("image/ayvalik_tost.png"));
+			img10 = ImageIO.read(new File("image/diyet_tost.png"));
+			img11 = ImageIO.read(new File("image/kavurmali_tost.png"));
+			img12 =ImageIO.read(new File("image/salamli_tost.png"));
 			*/
 
 		} catch (IOException e) {
