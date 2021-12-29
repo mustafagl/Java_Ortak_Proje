@@ -95,7 +95,6 @@ public class Grafik extends JPanel{
 				
 				screate();
 				
-				// System.out.println(Customer.customer_per_hour);
 
 			}
 				
