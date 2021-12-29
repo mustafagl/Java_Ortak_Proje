@@ -130,7 +130,7 @@ public class Grafik extends JPanel{
 		create_yanpanel();
 		try {
 			img0 = ImageIO.read(new File("image/background.jpg")); 
-			img1 = ImageIO.read(new File("image/table0.png"));
+			img1 = ImageIO.read(new File("image/table.png"));
 			img2 = ImageIO.read(new File("image/cashier.png"));
 			img3 = ImageIO.read(new File("image/cash_register.png"));
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
