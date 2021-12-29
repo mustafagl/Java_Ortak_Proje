@@ -168,28 +168,8 @@ public class Grafik extends JPanel{
 
 	void ciz_karakter(Graphics g) {
 		float scale = 1f;
-/*		
-		Çizgi Adam
-		g.setColor(Color.white);
-		g.fillRect((int) (posx * scale), (int) (posy * scale), (int) (100 * scale), (int) (100 * scale));
-		g.setColor(Color.black);
-		g.fillRect((int) ((30 + posx) * scale), (int) ((30 + posy) * scale), (int) (10 * scale), (int) (10 * scale));
-		g.fillRect((int) ((70 + posx) * scale), (int) ((30 + posy) * scale), (int) (10 * scale), (int) (10 * scale));
-		g.setColor(Color.red);
-		g.fillRect((int) ((30 + posx) * scale), (int) ((70 + posy) * scale), (int) (50 * scale), (int) (10 * scale));
-		g.setColor(Color.white);
-		g.fillRect((int) ((40 + posx) * scale), (int) ((90 + posy) * scale), (int) (30 * scale), (int) (30 * scale));
-		g.fillRect((int) ((-30 + posx) * scale), (int) ((120 + posy) * scale), (int) (160 * scale), (int) (20 * scale));
-		g.fillRect((int) ((-30 + posx) * scale), (int) ((120 + posy) * scale), (int) (15 * scale), (int) (150 * scale));
-		g.fillRect((int) ((115 + posx) * scale), (int) ((120 + posy) * scale), (int) (15 * scale), (int) (150 * scale));
-		g.fillRect((int) ((-10 + posx) * scale), (int) ((120 + posy) * scale), (int) (120 * scale),
-				(int) (150 * scale));
-		g.fillRect((int) ((0 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
-		g.fillRect((int) ((70 + posx) * scale), (int) ((270 + posy) * scale), (int) (30 * scale), (int) (100 * scale));
-*/	
-		
-		
-		g.drawImage(customersimg[musterifoto], posx-30, posy, 134, 495, null);
+				
+		g.drawImage(customersimg[musterifoto], posx-30, posy, 140, 495, null);
 		
 		if(c==0) {
 			img8=img6;
