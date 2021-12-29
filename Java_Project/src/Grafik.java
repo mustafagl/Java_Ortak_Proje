@@ -322,13 +322,13 @@ void create_siparis_panel() {
 		yanpanel = new JPanel();
 		yanpanel.setSize(210, 600);
 
-		yanpanel.setLayout(new GridLayout(16, 0, 0, 5));
+		yanpanel.setLayout(new GridLayout(16, 0, 0, 2));
 
 		yanpanel.setLocation(0, 0);
 
 		yanpanel.setBackground(new Color(100, 20, 50, 254));
 
-		JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9;
+		JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
 		l1 = new JLabel("  Para: " + Restaurant.para, SwingConstants.CENTER);
 		l1.setForeground(Color.white);
 
@@ -370,7 +370,11 @@ void create_siparis_panel() {
 
 		l9 = new JLabel("  Kira: " + Restaurant.kira, SwingConstants.CENTER);
 		l9.setBounds(210, 90, 80, 30);
-		l9.setForeground(Color.white);		
+		l9.setForeground(Color.white);
+		
+		l10 = new JLabel(" Müzik konsoldan kapatıp açılabilir.", SwingConstants.CENTER);
+		l10.setBounds(210, 90, 80, 30);
+		l10.setForeground(Color.white);
 		
 		JButton button = new JButton();
 		JButton button0 = new JButton();
@@ -378,7 +382,7 @@ void create_siparis_panel() {
 		JButton button2 = new JButton();
 		JButton button3 = new JButton();
 		JButton button4 = new JButton();
-		JButton button5 = new JButton();
+		//JButton button5 = new JButton();
 
 		button.setBackground(new Color(69, 17, 17, 200));
 		button.setForeground(Color.white);
@@ -509,13 +513,12 @@ void create_siparis_panel() {
 			}
 		});
 
+		/*
 		button5.setText("Reset");
 		button5.setBounds(10, 410, 80, 30);
 		button5.setBackground(new Color(69, 17, 17, 200));
 		button5.setForeground(Color.white);
 		
-		
-		/*
 		button5.addActionListener((ActionListener) new ActionListener() {
 		
 			@Override 
@@ -529,7 +532,6 @@ void create_siparis_panel() {
 		});
 		*/ 
 		 
-
 		yanpanel.add(l1);
 		yanpanel.add(l2);
 		yanpanel.add(l3);
@@ -539,6 +541,7 @@ void create_siparis_panel() {
 		yanpanel.add(l7);
 		yanpanel.add(l8);
 		yanpanel.add(l9);
+		yanpanel.add(l10);
 
 		yanpanel.add(button);
 		yanpanel.add(button0);
@@ -546,7 +549,7 @@ void create_siparis_panel() {
 		yanpanel.add(button2);
 		yanpanel.add(button3);
 		yanpanel.add(button4);
-		yanpanel.add(button5);
+		//yanpanel.add(button5);
 
 		this.add(yanpanel);
 

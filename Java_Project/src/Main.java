@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.File;
 import javax.sound.sampled.*;
 import java.util.Scanner;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,6 +10,7 @@ import javax.swing.JPanel;
 public class Main {
 
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+										   //Müzik için throws metodu.
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -18,8 +18,8 @@ public class Main {
 		AudioInputStream audioStream=AudioSystem.getAudioInputStream(music);
 		Clip clip=AudioSystem.getClip();
 		clip.open(audioStream);
-		clip.start();							//Müzik baþlat
-		clip.loop(1);							//Müzik Döngü Açýk
+		clip.start();														//Müzik baþlat
+		clip.loop(1);														//Müzik Döngü Açýk
 		
 		long start = System.currentTimeMillis();
 		Customer.musterigelmeorani();
@@ -28,21 +28,21 @@ public class Main {
 		
 		Grafik bs = new Grafik();
 		bs.image_oku();
-		Color mycolor = new Color(111, 90, 85);
-		bs.setBackground(mycolor);
-		JFrame jf = new JFrame("Restoran Oyunu");
-		jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);					//Pencereyi kapatmak programýn sonlandýrmasýný saðlar.
-		jf.setSize(1200, 638);
-		jf.setVisible(true);											//Görünürlük
-		jf.setResizable(false);											//Yeniden Boyutlandýrma
+		Color mycolor = new Color(111, 90, 85);								//Arkaplan rengi
+		bs.setBackground(mycolor);										
+		JFrame jf = new JFrame("Restoran Oyunu");							//Pencere Ýsmi
+		jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);						//Pencereyi kapatmak programýn sonlandýrmasýný saðlar.
+		jf.setSize(1200, 638);												//Pencere Büyüklüðü
+		jf.setVisible(true);												//Görünürlük
+		jf.setResizable(false);												//Yeniden Boyutlandýrma
 		jf.add(bs);
-		jf.setLocationRelativeTo(null);
+		jf.setLocationRelativeTo(null);										//Ekranda pencere ortalama
 		
-		ImageIcon image = new ImageIcon("image/restaurant_app_icon.png");
+		ImageIcon image = new ImageIcon("image/restaurant_app_icon.png");	//Pencere ikonu
 		jf.setIconImage(image.getImage());
 
 		bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
-		Staff temp= new Staff(2);
+		Staff temp= new Staff(2);											//Çalýþan Sayýsý
 		bs.employeeSuggestion.add(temp);
 		
 		Staff temp0= new Staff(2);
@@ -59,7 +59,7 @@ public class Main {
 			System.out.print("Ne yapmak istersin? ");
 			
 			response = scanner.next();
-			response = response.toUpperCase();
+			response = response.toUpperCase();								//Büyük harf uygula
 			
 			switch(response) {
 				case ("P"): clip.start();
@@ -67,7 +67,7 @@ public class Main {
 				break;
 				case ("S"): clip.stop();
 				break;
-				case ("R"): clip.setMicrosecondPosition(0);
+				case ("R"): clip.setMicrosecondPosition(0);					//Müziði yeniden baþlatma
 				break;
 				default: System.out.println("Geçerli bir cevap veriniz.");
 			}
