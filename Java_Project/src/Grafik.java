@@ -24,8 +24,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Grafik extends JPanel{
-// * public class Grafik extends JPanel implements ActionListener {
+public class Grafik extends JPanel implements ActionListener{
+	
 	static long start;
 
 	ArrayList<Staff> employeeSuggestion  = new ArrayList<>();
@@ -849,14 +849,10 @@ void create_calisanlar_panel() {
 		this.add(calisanlar_panel);
 
 	}
-
-/*
- *
+ 
 @Override
-public void actionPerformed(ActionEvent e) {
-	// TODO Auto-generated method stub
-	
+public void actionPerformed(ActionEvent e) {	
 }
-*/	
+
 	
 }
