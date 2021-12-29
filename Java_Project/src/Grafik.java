@@ -132,7 +132,7 @@ public class Grafik extends JPanel{
 		this.setLayout(null);
 		create_yanpanel();
 		try {
-			img0 = ImageIO.read(new File("image/background.jpg")); // src/background.jpeg Original
+			img0 = ImageIO.read(new File("image/background.jpg")); 
 			img1 = ImageIO.read(new File("image/table0.png"));
 			img2 = ImageIO.read(new File("image/cashier.png"));
 			img3 = ImageIO.read(new File("image/cash_register.png"));
@@ -389,7 +389,6 @@ void create_siparis_panel() {
 
 		button.setBackground(new Color(69, 17, 17, 200));
 		button.setForeground(Color.white);
-		// button.setMargin(new Insets(0, 10, 10, 0));
 
 		button.setText("Çalışanlar");
 		button.setBounds(10, 130, 80, 30);
@@ -494,7 +493,6 @@ void create_siparis_panel() {
 				}
 
 				Customer.musterigelmeorani();
-				// System.out.println(Customer.customer_per_hour);
 				delete_menu(yanpanel);
 				create_yanpanel();
 
