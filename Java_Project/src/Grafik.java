@@ -99,8 +99,6 @@ public class Grafik extends JPanel{
 			}
 				
 		
-		
-		
 		g.drawImage(img0, 150, -100, 1240, 800, null);
 		if (Customer.customer_per_hour >= 0 && new_customer == true) {
 			Customer.customer_per_hour -= 1;
@@ -152,7 +150,7 @@ public class Grafik extends JPanel{
 			img9 = ImageIO.read(new File("image/ayvalik_tost.png"));
 			img10 = ImageIO.read(new File("image/diyet_tost.png"));
 			img11 = ImageIO.read(new File("image/kavurmali_tost.png"));
-			img12 =ImageIO.read(new File("image/salamli_tost.png"));
+			img12 = ImageIO.read(new File("image/salamli_tost.png"));
 			*/
 
 		} catch (IOException e) {
@@ -322,7 +320,7 @@ void create_siparis_panel() {
 	void create_yanpanel() {
 
 		yanpanel = new JPanel();
-		yanpanel.setSize(150, 600);
+		yanpanel.setSize(210, 600);
 
 		yanpanel.setLayout(new GridLayout(16, 0, 0, 5));
 
