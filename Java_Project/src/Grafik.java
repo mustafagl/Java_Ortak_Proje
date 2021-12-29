@@ -51,6 +51,7 @@ public class Grafik extends JPanel{
 	BufferedImage img6 = null;
 	BufferedImage img7 = null;
 	BufferedImage img8 = null;
+	BufferedImage img9 = null;
 	BufferedImage[] customersimg = new BufferedImage[6];
 
 
@@ -135,8 +136,9 @@ public class Grafik extends JPanel{
 			img4 = ImageIO.read(new File("image/customer_man0.png"));
 			img5 = ImageIO.read(new File("image/kasarli_tost.png"));
 			img6 = ImageIO.read(new File("image/sucuklu_tost.png"));
-			img7 = ImageIO.read(new File("image/karisik_tost.png")); 
+			img7 = ImageIO.read(new File("image/karisik_tost.png"));
 			
+			img9 = ImageIO.read(new File("image/game_over.png"));
 			
 			customersimg[0] = ImageIO.read(new File("image/customer_man0.png"));
 			customersimg[1] = ImageIO.read(new File("image/customer_man1.png"));
@@ -146,11 +148,11 @@ public class Grafik extends JPanel{
 			customersimg[5] = ImageIO.read(new File("image/customer_woman.png"));
 
 			/*
-			img8 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
-			img9 = ImageIO.read(new File("image/ayvalik_tost.png"));
-			img10 = ImageIO.read(new File("image/diyet_tost.png"));
-			img11 = ImageIO.read(new File("image/kavurmali_tost.png"));
-			img12 = ImageIO.read(new File("image/salamli_tost.png"));
+			img10 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
+			img11 = ImageIO.read(new File("image/ayvalik_tost.png"));
+			img12 = ImageIO.read(new File("image/diyet_tost.png"));
+			img13 = ImageIO.read(new File("image/kavurmali_tost.png"));
+			img14 = ImageIO.read(new File("image/salamli_tost.png"));
 			*/
 
 		} catch (IOException e) {
@@ -173,10 +175,12 @@ public class Grafik extends JPanel{
 		if(c==2) {
 			img8=img5;
 		}
+		
 		g.drawImage(img8, posx + 100, posy - 100, 199, 166, null);
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
 		g.drawImage(img3, 800, 300, 176, 195, null);
+		//g.drawImage(img9, 250, 100, 880, 344, null); //Game Over
 		// Son eklenen önceki eklenen fotoğrafların üstüne çıkar.
 		
 
