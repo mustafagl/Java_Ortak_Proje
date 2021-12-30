@@ -337,12 +337,9 @@ void create_siparis_panel() {
 		JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
 		l1 = new JLabel("  Para: " + Restaurant.para, SwingConstants.CENTER);
 		l1.setForeground(Color.white);
-
-		l1.setBounds(10, 10, 80, 30);
-		l2 = new JLabel("  Saat: " + Restaurant.saat, SwingConstants.CENTER);
-		l2.setBounds(10, 50, 80, 30);
-		l2.setForeground(Color.white);
 		
+		l2 = new JLabel("  Saat: " + Restaurant.saat, SwingConstants.CENTER);
+		l2.setForeground(Color.white);
 		float tempyildiz=0;
 		for(Staff c :employees) {
 			tempyildiz+=(float)(c.Seviye*Customer.satisfaction());
@@ -351,36 +348,29 @@ void create_siparis_panel() {
 		Restaurant.yildiz=tempyildiz;
 		
 		l3 = new JLabel("  Yıldız: " + Restaurant.yildiz, SwingConstants.CENTER);
-		l3.setBounds(10, 90, 80, 30);
 		l3.setForeground(Color.white);
 
 		l4 = new JLabel("  Hamur: " + Restaurant.hamur[0], SwingConstants.CENTER);
-		l4.setBounds(10, 130, 80, 30);
 		l4.setForeground(Color.white);
 
 		l5 = new JLabel("  Kaşar: " + Restaurant.kasar[0], SwingConstants.CENTER);
-		l5.setBounds(10, 170, 80, 30);
 		l5.setForeground(Color.white);
 
 		l6 = new JLabel("  Sucuk: " + Restaurant.sucuk[0], SwingConstants.CENTER);
-		l6.setBounds(210, 90, 80, 30);
 		l6.setForeground(Color.white);
 
 		l7 = new JLabel("  Sıradaki Müşteri: " + Customer.customer_per_hour, SwingConstants.CENTER);
-		l7.setBounds(210, 90, 80, 30);
 		l7.setForeground(Color.white);
 
 		l8 = new JLabel("  Memnuniyeti: " + Customer.satisfaction(), SwingConstants.CENTER);
-		l8.setBounds(210, 90, 80, 30);
 		l8.setForeground(Color.white);
 
 		l9 = new JLabel("  Kira: " + Restaurant.kira, SwingConstants.CENTER);
-		l9.setBounds(210, 90, 80, 30);
 		l9.setForeground(Color.white);
 		
 		l10 = new JLabel(" Müzik konsoldan kapatıp açılabilir.", SwingConstants.CENTER);
-		l10.setBounds(210, 90, 80, 30);
 		l10.setForeground(Color.white);
+		//l10.setFont(l10.getFont().deriveFont(18.0f));
 		
 		JButton button = new JButton();
 		JButton button0 = new JButton();
@@ -388,7 +378,6 @@ void create_siparis_panel() {
 		JButton button2 = new JButton();
 		JButton button3 = new JButton();
 		JButton button4 = new JButton();
-		//JButton button5 = new JButton();
 
 		button.setBackground(new Color(69, 17, 17, 200));
 		button.setForeground(Color.white);
@@ -407,18 +396,13 @@ void create_siparis_panel() {
 					delete_menu(calisanlar_panel);
 
 					create_calisanlar_panel();
-
 				}
-
 			}
 		});
 
 		button0.setText("İş Başvuruları");
-		button0.setBounds(10, 250, 80, 30);
-
 		button0.setBackground(new Color(69, 17, 17, 200));
 		button0.setForeground(Color.white);
-
 		button0.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -430,17 +414,13 @@ void create_siparis_panel() {
 					delete_menu(calisanlar_panel);
 
 					create_is_basvurulari_panel();
-
 				}
-
 			}
 		});
 
 		button1.setText("Yemekler");
-		button1.setBounds(10, 290, 80, 30);
 		button1.setBackground(new Color(69, 17, 17, 200));
 		button1.setForeground(Color.white);
-
 		button1.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -452,15 +432,12 @@ void create_siparis_panel() {
 
 					create_yemekler_panel();
 				}
-
 			}
 		});
 
 		button2.setText("Malzemeler");
-		button2.setBounds(10, 330, 80, 30);
 		button2.setBackground(new Color(69, 17, 17, 200));
 		button2.setForeground(Color.white);
-
 		button2.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -478,10 +455,8 @@ void create_siparis_panel() {
 		});
 
 		button3.setText("Saat Atla");
-		button3.setBounds(10, 330, 80, 30);
 		button3.setBackground(new Color(69, 17, 17, 200));
 		button3.setForeground(Color.white);
-
 		button3.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -498,15 +473,12 @@ void create_siparis_panel() {
 				Customer.musterigelmeorani();
 				delete_menu(yanpanel);
 				create_yanpanel();
-
 			}
 		});
 
 		button4.setText("Oyunu Durdur");
-		button4.setBounds(10, 370, 80, 30);
 		button4.setBackground(new Color(69, 17, 17, 200));
 		button4.setForeground(Color.white);
-
 		button4.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -518,25 +490,6 @@ void create_siparis_panel() {
 
 			}
 		});
-
-		/*
-		button5.setText("Reset");
-		button5.setBounds(10, 410, 80, 30);
-		button5.setBackground(new Color(69, 17, 17, 200));
-		button5.setForeground(Color.white);
-		
-		button5.addActionListener((ActionListener) new ActionListener() {
-		
-			@Override 
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource()==button5) {
-					this.remove();
-					
-				}
-		 
-			} 
-		});
-		*/ 
 		 
 		yanpanel.add(l1);
 		yanpanel.add(l2);
@@ -555,7 +508,6 @@ void create_siparis_panel() {
 		yanpanel.add(button2);
 		yanpanel.add(button3);
 		yanpanel.add(button4);
-		//yanpanel.add(button5);
 
 		this.add(yanpanel);
 
@@ -855,6 +807,5 @@ void create_calisanlar_panel() {
 @Override
 public void actionPerformed(ActionEvent e) {	
 }
-
 	
 }
