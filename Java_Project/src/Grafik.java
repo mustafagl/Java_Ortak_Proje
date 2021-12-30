@@ -64,7 +64,7 @@ public class Grafik extends JPanel implements ActionListener{
 		super.paintComponent(g);
 
 			long second = System.currentTimeMillis() - start;
-			if (second / 1000 > 10) {
+			if (second / 1000 > 15) {
 				if (Restaurant.saat < 24) {
 
 					Restaurant.saat += 1;
