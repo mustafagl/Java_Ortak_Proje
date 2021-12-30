@@ -515,13 +515,15 @@ void create_siparis_panel() {
 
 		}
 
+		ImageIcon close=new ImageIcon("image/close.png");
 		JButton cikisbtn = new JButton();
 
-		cikisbtn.setForeground(Color.red);
-
-		cikisbtn.setText("X");
-		cikisbtn.setBounds(270, 0, 30, 30);
+		cikisbtn.setBackground(Color.white);
+		cikisbtn.addActionListener(this);
+		cikisbtn.setBounds(275, 0, 25, 25);
 		cikisbtn.setMargin(new Insets(0, 0, 0, 0));
+		cikisbtn.setFocusable(false);
+		cikisbtn.setIcon(close);
 
 		cikisbtn.addActionListener((ActionListener) new ActionListener() {
 			@Override
@@ -613,14 +615,18 @@ void create_siparis_panel() {
 
 		list.setEnabled(false);
 		list.setBounds(25, 25, 240, 250);
+		
+		ImageIcon close=new ImageIcon("image/close.png");
 
 		JButton cikisbtn = new JButton();
-		cikisbtn.setForeground(Color.red);
 
-		cikisbtn.setText("X");
-		cikisbtn.setBounds(270, 0, 30, 30);
+		cikisbtn.setBackground(Color.white);
+		cikisbtn.addActionListener(this);
+		cikisbtn.setBounds(275, 0, 25, 25);
 		cikisbtn.setMargin(new Insets(0, 0, 0, 0));
-
+		cikisbtn.setFocusable(false);
+		cikisbtn.setIcon(close);
+		
 		cikisbtn.addActionListener((ActionListener) new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -684,14 +690,17 @@ void create_siparis_panel() {
 				}
 			}
 		});
+		
+		ImageIcon close=new ImageIcon("image/close.png");
 
 		JButton cikisbtn = new JButton();
-		// list.setBackground(new Color(0,0,0,200));
-		cikisbtn.setForeground(Color.red);
-
-		cikisbtn.setText("X");
-		cikisbtn.setBounds(270, 0, 30, 30);
+		
+		cikisbtn.setBackground(Color.white);
+		cikisbtn.addActionListener(this);
+		cikisbtn.setBounds(275, 0, 25, 25);
 		cikisbtn.setMargin(new Insets(0, 0, 0, 0));
+		cikisbtn.setFocusable(false);
+		cikisbtn.setIcon(close);
 
 		cikisbtn.addActionListener((ActionListener) new ActionListener() {
 			@Override
@@ -758,14 +767,16 @@ void create_calisanlar_panel() {
 				}
 			}
 		});
-
+		ImageIcon close=new ImageIcon("image/close.png");
+		
 		JButton cikisbtn = new JButton();
-		// list.setBackground(new Color(0,0,0,200));
-		cikisbtn.setForeground(Color.red);
 
-		cikisbtn.setText("X");
-		cikisbtn.setBounds(270, 0, 30, 30);
+		cikisbtn.setBackground(Color.white);
+		cikisbtn.addActionListener(this);
+		cikisbtn.setBounds(275, 0, 25, 25);
 		cikisbtn.setMargin(new Insets(0, 0, 0, 0));
+		cikisbtn.setFocusable(false);
+		cikisbtn.setIcon(close);
 
 		cikisbtn.addActionListener((ActionListener) new ActionListener() {
 			@Override
@@ -787,7 +798,8 @@ void create_calisanlar_panel() {
 	}
  
 @Override
-public void actionPerformed(ActionEvent e) {	
+public void actionPerformed(ActionEvent e) {
+	
 }
 	
 }
