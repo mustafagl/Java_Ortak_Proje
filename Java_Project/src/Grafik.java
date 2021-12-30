@@ -180,7 +180,10 @@ public class Grafik extends JPanel implements ActionListener{
 		g.drawImage(img1, -75, 400, 1484, 255, null);
 		g.drawImage(img2, 520, 250, 264, 725, null);
 		g.drawImage(img3, 800, 300, 176, 195, null);
-		//g.drawImage(img9, 250, 100, 880, 344, null); //Game Over
+		if(Restaurant.para==0||Restaurant.para<0) {
+			g.drawImage(img9, 250, 100, 880, 344, null);
+			oyunudurdur=true;
+		}
 		// Son eklenen önceki eklenen fotoğrafların üstüne çıkar.
 		
 
