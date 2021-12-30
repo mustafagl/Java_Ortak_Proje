@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class Main {
 
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-										   //Müzik için throws metodu.
+										   //MÃ¼zik iÃ§in throws metodu.
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -18,8 +18,8 @@ public class Main {
 		AudioInputStream audioStream=AudioSystem.getAudioInputStream(music);
 		Clip clip=AudioSystem.getClip();
 		clip.open(audioStream);
-		clip.start();														//Müzik baþlat
-		clip.loop(1);														//Müzik Döngü Açýk
+		clip.start();														//MÃ¼zik baÅŸlat
+		clip.loop(1);														//MÃ¼zik DÃ¶ngÃ¼ AÃ§Ä±k
 		
 		long start = System.currentTimeMillis();
 		Customer.musterigelmeorani();
@@ -30,11 +30,11 @@ public class Main {
 		bs.image_oku();
 		Color mycolor = new Color(111, 90, 85);								//Arkaplan rengi
 		bs.setBackground(mycolor);										
-		JFrame jf = new JFrame("Restoran Oyunu");							//Pencere Ýsmi
-		jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);						//Pencereyi kapatmak programýn sonlandýrmasýný saðlar.
-		jf.setSize(1200, 638);												//Pencere Büyüklüðü
-		jf.setVisible(true);												//Görünürlük
-		jf.setResizable(false);												//Yeniden Boyutlandýrma
+		JFrame jf = new JFrame("Restoran Oyunu");							//Pencere Ä°smi
+		jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);						//Pencereyi kapatmak programÃ½n sonlandÄ±rmasÄ±nÄ± saÄŸlar.
+		jf.setSize(1200, 638);												//Pencere BÃ¼yÃ¼klÃ¼ÄŸÃ¼
+		jf.setVisible(true);												//GÃ¶rÃ¼nÃ¼rlÃ¼k
+		jf.setResizable(false);												//Yeniden BoyutlandÃ½rma
 		jf.add(bs);
 		jf.setLocationRelativeTo(null);										//Ekranda pencere ortalama
 		
@@ -42,7 +42,7 @@ public class Main {
 		jf.setIconImage(image.getImage());
 
 		bs.employeeSuggestion.removeAll(bs.employeeSuggestion);
-		Staff temp= new Staff(2);											//Çalýþan Sayýsý
+		Staff temp= new Staff(2);											//Ã‡alÅŸan SayÄ±sÄ±
 		bs.employeeSuggestion.add(temp);
 		
 		Staff temp0= new Staff(2);
@@ -55,11 +55,11 @@ public class Main {
 		String response = "";
 		
 		while(!response.equals("Q")) {
-			System.out.println("P = Müzik Oynat, S = Müzik Durdur, R = Müziði Yeniden Baþlat");
+			System.out.println("P = MÃ¼zik Oynat, S = MÃ¼zik Durdur, R = MÃ¼ziÄŸi Yeniden BaÅŸlat");
 			System.out.print("Ne yapmak istersin? ");
 			
 			response = scanner.next();
-			response = response.toUpperCase();								//Büyük harf uygula
+			response = response.toUpperCase();								//BÃ¼yÃ¼k harf uygula
 			
 			switch(response) {
 				case ("P"): clip.start();
@@ -67,11 +67,13 @@ public class Main {
 				break;
 				case ("S"): clip.stop();
 				break;
-				case ("R"): clip.setMicrosecondPosition(0);					//Müziði yeniden baþlatma
+				case ("R"): clip.setMicrosecondPosition(0);					//MÃ¼ziÄŸi yeniden baÅŸlatma
 				break;
-				default: System.out.println("Geçerli bir cevap veriniz.");
+				default: System.out.println("GeÃ§erli bir cevap veriniz.");
 			}
 		 }
 	}
 
 }
+
+

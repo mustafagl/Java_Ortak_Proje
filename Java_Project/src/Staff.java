@@ -19,10 +19,14 @@ public class Staff {
 				Ad="kasiyer";
 			}
 			else
-				Ad="þef";
+				Ad="ÅŸef";
 		}
 
 		
 	}
 
 }
+
+
+
+

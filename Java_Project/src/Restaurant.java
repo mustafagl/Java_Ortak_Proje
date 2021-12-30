@@ -27,16 +27,17 @@ public class Restaurant extends Grafik {
 
 		for (int i = 0; i < calisanlar.size(); i++) {
 			if (calisanlar.get(i).Yetenek == "tost") {
-				yemekler.put("Kaþarlý Tost", kasarli_tost);
+				yemekler.put("KaÅŸarlÄ± Tost", kasarli_tost);
 				yemekler.put("Sucuklu Tost", sucuklu_tost);
-				yemekler.put("Karýþýk Tost", karisik_tost);
+				yemekler.put("KarÄ±ÅŸÄ±k Tost", karisik_tost);
 			}
 			if (calisanlar.get(i).Yetenek == "pizza") {
-				yemekler.put("Kaþarlý Pizza", kasarli_tost);
-				yemekler.put("Sucuklu Kaþarlý Pizza", sucuklu_tost);
+				//yemekler.put("KaÅŸarlÄ± Pizza", kasarli_tost);
+				//yemekler.put("Sucuklu KaÅŸarlÄ± Pizza", sucuklu_tost);
 			}			
 		}
 
 	}
 
 }
+

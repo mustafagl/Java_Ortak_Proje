@@ -49,21 +49,10 @@ public class Grafik extends JPanel implements ActionListener{
 	BufferedImage img4 = null;
 	BufferedImage img5 = null;
 	BufferedImage img6 = null;
-	BufferedImage img7 = null;
 	BufferedImage img8 = null;
-	BufferedImage img9 = null;
+	BufferedImage img7 = null;
 	BufferedImage[] customersimg = new BufferedImage[6];
 
-
-	/*
-	BufferedImage img6 = null;
-	BufferedImage img7 = null;
-	BufferedImage img8 = null;
-	BufferedImage img9 = null;
-	BufferedImage img10 = null;
-	BufferedImage img11 = null;
-	BufferedImage img12 = null;
-	*/
 	
 	int c=0;
 	int musterifoto=0;
@@ -128,31 +117,24 @@ public class Grafik extends JPanel implements ActionListener{
 		this.setLayout(null);
 		create_yanpanel();
 		try {
-			img0 = ImageIO.read(new File("image/background.jpg")); 
-			img1 = ImageIO.read(new File("image/table.png"));
-			img2 = ImageIO.read(new File("image/cashier.png"));
-			img3 = ImageIO.read(new File("image/cash_register.png"));
-			img4 = ImageIO.read(new File("image/customer_man0.png"));
-			img5 = ImageIO.read(new File("image/kasarli_tost.png"));
-			img6 = ImageIO.read(new File("image/sucuklu_tost.png"));
-			img7 = ImageIO.read(new File("image/karisik_tost.png"));
+			img0 = ImageIO.read(new File("image/background.jpg"));   //Arka plan
+			img1 = ImageIO.read(new File("image/table.png")); //Masa
+			img2 = ImageIO.read(new File("image/cashier.png")); //Kasiyer
+			img3 = ImageIO.read(new File("image/cash_register.png")); //Kasa
 			
-			img9 = ImageIO.read(new File("image/game_over.png"));
+			img4 = ImageIO.read(new File("image/kasarli_tost.png"));//Tost1
+			img5 = ImageIO.read(new File("image/sucuklu_tost.png"));//Tost2
+			img6 = ImageIO.read(new File("image/karisik_tost.png"));//Tost3
 			
-			customersimg[0] = ImageIO.read(new File("image/customer_man0.png"));
-			customersimg[1] = ImageIO.read(new File("image/customer_man1.png"));
-			customersimg[2] = ImageIO.read(new File("image/customer_man2.png"));
-			customersimg[3] = ImageIO.read(new File("image/customer_muslim_woman.png"));
-			customersimg[4] = ImageIO.read(new File("image/customer_old_woman.png"));
-			customersimg[5] = ImageIO.read(new File("image/customer_woman.png"));
-
-			/*
-			img10 = ImageIO.read(new File("image/ayvalik_duble_tost.png"));
-			img11 = ImageIO.read(new File("image/ayvalik_tost.png"));
-			img12 = ImageIO.read(new File("image/diyet_tost.png"));
-			img13 = ImageIO.read(new File("image/kavurmali_tost.png"));
-			img14 = ImageIO.read(new File("image/salamli_tost.png"));
-			*/
+			img7 = ImageIO.read(new File("image/game_over.png"));
+			
+			customersimg[0] = ImageIO.read(new File("image/customer_man0.png")); //Müşteri
+			customersimg[1] = ImageIO.read(new File("image/customer_man1.png")); //Müşteri
+			customersimg[2] = ImageIO.read(new File("image/customer_man2.png"));//Müşteri
+			customersimg[3] = ImageIO.read(new File("image/customer_muslim_woman.png"));//Müşteri
+			customersimg[4] = ImageIO.read(new File("image/customer_old_woman.png"));//Müşteri
+			customersimg[5] = ImageIO.read(new File("image/customer_woman.png"));//Müşteri
+	
 
 		} catch (IOException e) {
 			//System.out.print("x");
@@ -161,18 +143,17 @@ public class Grafik extends JPanel implements ActionListener{
 	}
 
 	void ciz_karakter(Graphics g) {
-		float scale = 1f;
-				
+
 		g.drawImage(customersimg[musterifoto], posx-30, posy, 140, 495, null);
 		
 		if(c==0) {
-			img8=img6;
+			img8=img5;
 		}
 		if(c==1) {
-			img8=img7;
+			img8=img6;
 		}
 		if(c==2) {
-			img8=img5;
+			img8=img4;
 		}
 		
 		g.drawImage(img8, posx + 100, posy - 100, 199, 166, null);
@@ -180,7 +161,7 @@ public class Grafik extends JPanel implements ActionListener{
 		g.drawImage(img2, 520, 250, 264, 725, null);
 		g.drawImage(img3, 800, 300, 176, 195, null);
 		if(Restaurant.para==0||Restaurant.para<0) {
-			g.drawImage(img9, 250, 100, 880, 344, null);
+			g.drawImage(img7, 250, 100, 880, 344, null);
 			oyunudurdur=true;
 		}
 		// Son eklenen önceki eklenen fotoğrafların üstüne çıkar.
@@ -467,6 +448,7 @@ void create_siparis_panel() {
 					start = System.currentTimeMillis();
 
 				} else {
+					Restaurant.para-=Restaurant.kira;
 					Restaurant.saat = 0;
 				}
 
