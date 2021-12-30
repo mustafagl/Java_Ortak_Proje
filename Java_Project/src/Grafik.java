@@ -351,7 +351,7 @@ void create_siparis_panel() {
 		
 		l10 = new JLabel(" Müzik konsoldan kapatıp açılabilir.", SwingConstants.CENTER);
 		l10.setForeground(Color.white);
-		//l10.setFont(l10.getFont().deriveFont(18.0f));
+		l10.setFont(new Font("Calibri", Font.ITALIC, 13));
 		
 		JButton button = new JButton();
 		JButton button0 = new JButton();
