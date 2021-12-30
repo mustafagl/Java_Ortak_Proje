@@ -75,7 +75,6 @@ public class Grafik extends JPanel implements ActionListener{
 		super.paintComponent(g);
 
 			long second = System.currentTimeMillis() - start;
-			//System.out.println(second / 1000);
 			if (second / 1000 > 10) {
 				if (Restaurant.saat < 24) {
 
@@ -115,7 +114,7 @@ public class Grafik extends JPanel implements ActionListener{
 		try {
 			Thread.sleep(sn);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
@@ -156,7 +155,7 @@ public class Grafik extends JPanel implements ActionListener{
 			*/
 
 		} catch (IOException e) {
-			System.out.print("x");
+			//System.out.print("x");
 		}
 
 	}
@@ -276,10 +275,10 @@ void create_siparis_panel() {
 
 								Customer.memnuniyetHesap(sliderdn.getMaximum(), sliderdn.getValue());
 
-								System.out.println();
+								//System.out.println();
 
 								Customer.negative++;
-								System.out.println(Customer.satisfaction());
+								//System.out.println(Customer.satisfaction());
 							} else {
 								Restaurant.malzemeler.get(i)[0] = 0;
 								Customer.negative+=10;
@@ -503,7 +502,7 @@ void create_siparis_panel() {
 			}
 		});
 
-		button4.setText("Pause");
+		button4.setText("Oyunu Durdur");
 		button4.setBounds(10, 370, 80, 30);
 		button4.setBackground(new Color(69, 17, 17, 200));
 		button4.setForeground(Color.white);
@@ -615,11 +614,11 @@ void create_siparis_panel() {
 				if (list.getSelectedIndex() != -1) {
 					Restaurant.malzemeler.get(list.getSelectedValue())[0] += 10;
 					Restaurant.para -= Restaurant.malzemeler.get(list.getSelectedValue())[1];
-					System.out.println(Restaurant.kasar[0]);
-					System.out.println(Restaurant.para);
+					//System.out.println(Restaurant.kasar[0]);
+					//System.out.println(Restaurant.para);
 					delete_menu(yanpanel);
 					create_yanpanel();
-					System.out.println(list.getSelectedValue());
+					//System.out.println(list.getSelectedValue());
 					delete_menu(panel_malzemeler);
 					create_malzemeler_panel();
 
